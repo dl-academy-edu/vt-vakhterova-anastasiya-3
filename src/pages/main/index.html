@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <link rel="stylesheet" href="/common.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Главная</title>
+</head>
+<body>
+  @@include('header/index.html')
+  <main>
+    <div class="general-information container"> 
+      @@include('page-title/index.html',{
+        "text": "Antonina Antoninovna"
+      })
+      <div class="general-information__general"> Future front-end developer 23 years old, Tolyatti </div>
+    </div>
+    <div class="page-slider container">
+      <div class="page-slider__block">
+        <picture>
+          <source srcset="/static/images/slider-photo.mobile.png"  media="(min-width:0px) and (max-width:599px)">
+          <source srcset="/static/images/slider-photo.ipad.png"  media="(min-width:600px) and (max-width:1000px)">                   
+          <img class="page-slider__background-img" src="/static/images/slider-photo.png" alt="personal photo">
+        </picture>
+
+      </div>
+      <div class="page-slider__selector">
+        <button class="page-slider__selector-button-change">
+          <img class="page-slider__img" src="/static/images/back.svg" alt="back">
+        </button>
+
+        <div class="page-slider__slider-pages">
+          <button class="page-slider__slider-button"> </button>
+          <button class="page-slider__slider-button"> </button>
+          <button class="page-slider__slider-button"> </button>
+          <button class="page-slider__slider-button"> </button>
+        </div>
+
+        <button class="page-slider__selector-button-change">
+            <img class="page-slider__img" src="/static/images/next.svg" alt="back">
+        </button>       
+      
+      </div>
+    </div >
+    <section class="aboutMe ">
+      <h2 class="aboutMe__title">About me </h2>
+      <div class="aboutMe__wrapper container">
+        <div class="aboutMe__list">
+          <div class="aboutMe__item-block">
+            <svg width="482" height="139" viewBox="0 0 482 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M480 2H2V117H416L436 137L456 117H480V2Z" stroke="#070707" stroke-width="2.5"/>
+              </svg>
+            <p class="aboutMe__item-text">
+              Aliquam tortor molestie turpis est tristique. Congue diam orci amet quis semper ut. 
+              Vitae aenean nibh facilisis urna, ultricies euismod nunc. Commodo fringilla sit hendrerit consequat. Vel ac elit vel sagittis.
+            </p>
+          </div>
+          <div class="aboutMe__item-block aboutMe__item-block_ml">
+            <svg width="482" height="118" viewBox="0 0 482 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M480 1.99963H2V95.9996H26L46 116L66 95.9996H480V1.99963Z" stroke="#070707" stroke-width="2.5"/>
+              </svg>
+            <p class="aboutMe__item-text">
+              Tincidunt id quis pellentesque rutrum pretium. Egestas aliquam dictum ipsum nisl, sed pulvinar.
+              Commodo elit sed a fermentum non justo. Etiam platea consectetur.
+            </p>
+          </div>
+            <div class="aboutMe__item-block">
+              <svg width="482" height="118" viewBox="0 0 482 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M480 2H2V96H416L436 116L456 96H480V2Z" stroke="#070707" stroke-width="2.5"/>
+              </svg>
+              <p class="aboutMe__item-text">
+                Quam ipsum odio tellus etiam aliquam dolor ut hendrerit. Felis risus nec vitae nunc ultricies placerat.
+                Nullam nec felis eu id dolor pellentesque tristique. 
+              </p>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="skills container">
+      <div class="skills__wrapper">
+        <h2 class="skills__title"> Skills </h2>
+        <div class="skills__text"> I work in such programs as </div>
+        <ul class="hidden-marker skills__list">
+          <li class="skills__item">
+            <img class="skills__img" src="/static/images/html.svg" alt="HTML">
+            <div class="skills__item-name">HTML 5 </div>
+            <div class="skills__measurer">
+              <div class="skills__item-percent"> 85% </div>
+              <img class="skills__img-line" src="/static/images/skills.line1.png" alt="">
+            </div>
+          </li>
+          <li class="skills__item">
+            <img class="skills__img" src="/static/images/css.svg" alt="CSS/SCSS">
+            <div class="skills__item-name">CSS/SCSS </div>
+            <div class="skills__measurer">
+              <div class="skills__item-percent"> 55% </div>
+              <img class="skills__img-line" src="/static/images/skills.line2.png" alt="">
+            </div>
+          </li>
+          <li class="skills__item">
+            <img class="skills__img" src="/static/images/java.svg" alt="JavaScript">
+            <div class="skills__item-name">JavaScript</div>
+            <div class="skills__measurer">
+              <div class="skills__item-percent"> 5% </div>
+              <img class="skills__img-line" src="/static/images/skills.line3.png" alt="">
+            </div>
+          </li>
+          <li class="skills__item">
+            <img class="skills__img" src="/static/images/git.png" alt="Git / GitHub">
+            <div class="skills__item-name">Git/GitHub </div>
+            <div class="skills__measurer">
+              <div class="skills__item-percent"> 15%% </div>
+              <img class="skills__img-line" src="/static/images/skills.line4.png" alt="">
+            </div>
+          </li>
+          <li class="skills__item">
+            <img class="skills__img" src="/static/images/figma.svg" alt="Git / Figma">
+            <div class="skills__item-name">Figma </div>
+            <div class="skills__measurer">
+              <div class="skills__item-percent"> 80% </div>
+              <img class="skills__img-line" src="/static/images/skills.line5.png" alt="">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="portfolio">
+      <div class="portfolio__wrapper">
+        <h2 class="portfolio__title"> Portfolio </h2>
+        <picture>
+          <source srcset="/static/images/portfolio.site.mobile.png"  media="(min-width:0px) and (max-width:599px)">
+          <source srcset="/static/images/portfolio.site.ipad.png"  media="(min-width:600px) and (max-width:1000px)">                   
+          <img class="portfolio__portfolio-img" src="/static/images/portfolio.site.png" alt="site img">
+        </picture>
+        <div class="portfolio__portfolio-general-block container">
+          <div class="portfolio__general-portfolio-information">
+            <a class="portfolio__training-company-link"> Learning site for DL Academy courses </a>
+            <div class="portfolio__portfolio-description"> A simple multi-page static site. The design layout was in Figma. HTML and CSS were used. 
+            The site is responsive and cross-browser, but without adding interactivity via JavaScript.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    @@include('footer/index.html')
+<div class="modal  modal_register-none modal_register-js">
+  <form name="register" class="form">
+    <div class="form__row-column_600">
+      <label class="form__label" for="input-email-register"> Email
+        <span class="form__label-star_red">*</span>
+      </label>
+      <input class="form__input form__input_js" name="email" id="input-email-register" type="email">
+    </div>
+    <div class="form__row">
+      <div class="form__column">
+        <label class="form__label" for="input-name-register"> Name
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="name" id="input-name-register" type="text">
+      </div>
+      <div class="form__column">
+        <label class="form__label" for="input-surname-register"> Surname
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="surname" id="input-surname-register" type="text">
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__column">
+        <label class="form__label" for="input-password-register"> Password
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="password" id="input-password-register" type="password">
+      </div>
+      <div class="form__column">
+        <label class="form__label" for="repeat-password"> Repeat password
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="password" id="repeat-password" type="password">
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__column">
+        <label class="form__label" for="input-location"> Location
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="location" id="input-location" type="text">
+      </div>
+      <div class="form__column">
+        <label class="form__label" for="input-age"> Age
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="age" id="input-age" type="number">
+      </div>
+    </div>
+    <fieldset class="form__checkbox">
+      <label class="form__checkbox form__label-checkbox">
+        <input class="form__input visually-hidden" name="accept" type="checkbox">
+        <span class="form__checkbox-indicator"> </span>
+        <span class="form-register__checkbox-text"> Clicking on the button, you consent to the processing of your
+          personal data.
+        </span>
+      </label>
+    </fieldset>
+    <button type="submit" class="form__button"> Sign up </button>
+    <button class="form__x form__x_js" type="button">
+      <img src="/static/images/close.svg" alt="X"> </button>
+  </form>
+</div>
+<div class="modal modal_masage-none modal_massage-js">
+  <form name="massage" class="form">
+    <div class="form__row">
+      <div class="form__column">
+        <label class="form__label" for="input-name-message"> What is your name? 
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input form__input_massage-js " name="name" id="input-name-message" type="text">
+      </div>
+      <div class="form__column">
+        <label class="form__label" for="input-subject"> Message subject
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="subject" id="input-subject" type="text">
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__column">
+        <label class="form__label" for="input-email-message"> Your Email
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="email" id="input-email-message" type="email">
+      </div>
+      <div class="form__column">
+        <label class="form__label" for="input-phone"> Your mobile phone
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="phone" id="input-phone" type="tel">
+      </div>
+    </div>
+    <div class="form__textarea">
+      <label class="form__label" for="input-massage"> What do you want to discuss with me?</label>
+      <textarea class="form__textarea-massage" name="message" id="input-massage" cols="30" rows="10" style="max-width:600px;"> </textarea>
+    </div>
+    <fieldset class="form__checkbox">
+      <label class="form__checkbox form__label-checkbox">
+        <input class="form__input visually-hidden" name="accept" type="checkbox">
+        <span class="form__checkbox-indicator"> </span>
+        <span class="form-register__checkbox-text"> Clicking on the button, you consent to the processing of your
+          personal data.
+        </span>
+      </label>
+    </fieldset>
+    <button type="submit" class="form__button"> Sign up </button>
+    <button class="form__x form__x_massage-js" type="button">
+      <img src="/static/images/close.svg" alt="X"> </button>
+  </form>
+</div>
+<div class="modal modal_sign-none modal_sign-js">
+  <form name="sign" class="form form__sign_width">
+      <div class="form__column form__row">
+        <label class="form__label" for="input-email"> Email 
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input form__input_sign-js" name="email" id="input-email" type="email">
+      </div>
+      <div class="form__column form__row">
+        <label class="form__label" for="input-password"> Password
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="password" id="input-password" type="password">
+      </div>
+    <button type="submit" class="form__button"> Log in </button>
+    <button class="form__x form__x_sign-js" type="button">
+      <img src="/static/images/close.svg" alt="X"> </button>
+  </form>
+</div>
+    <button class="button-scroll button-scroll-up_js button-scroll_none button-scroll_js"> 
+      <img class="button-scroll__img" src="/static/images/up.png" alt="up">      
+    </button>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>

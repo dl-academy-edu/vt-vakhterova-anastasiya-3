@@ -6,8 +6,10 @@
 
   <link rel="stylesheet" href="/common.css">
   <link rel="stylesheet" href="style.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <title>Главная</title>
 </head>
 <body>
@@ -20,28 +22,31 @@
       <div class="general-information__general"> Future front-end developer 23 years old, Tolyatti </div>
     </div>
     <div class="page-slider container">
-      <div class="page-slider__block">
-        <picture>
-          <source srcset="/static/images/slider-photo.mobile.png"  media="(min-width:0px) and (max-width:599px)">
-          <source srcset="/static/images/slider-photo.ipad.png"  media="(min-width:600px) and (max-width:1000px)">                   
-          <img class="page-slider__background-img" src="/static/images/slider-photo.png" alt="personal photo">
-        </picture>
-
-      </div>
-      <div class="page-slider__selector">
-        <button class="page-slider__selector-button-change">
-          <img class="page-slider__img" src="/static/images/back.svg" alt="back">
-        </button>
-
-        <div class="page-slider__slider-pages">
-          <button class="page-slider__slider-button"> </button>
-          <button class="page-slider__slider-button"> </button>
-          <button class="page-slider__slider-button"> </button>
-          <button class="page-slider__slider-button"> </button>
+      <div class="page-slider__wrapper">
+        <div class="page-slider__inner-wrapper">
+          <!-- <picture class="page-slider__slide">
+            <source srcset="/static/images/slider-photo.mobile.png"  media="(min-width:0px) and (max-width:599px)">
+            <source srcset="/static/images/slider-photo.ipad.png"  media="(min-width:600px) and (max-width:1000px)">                   
+                      </picture> -->  
+          <img class="page-slider__slide" src="/static/images/slider-photo.png" alt="personal photo">
+          <img class="page-slider__slide" src="/static/images/slider-photo1.jpg" alt="nature">
+          <img class="page-slider__slide" src="/static/images/slider-photo2.jpg" alt="nature">
+          <img class="page-slider__slide" src="/static/images/slider-photo3.jpg" alt="nature">
         </div>
-
-        <button class="page-slider__selector-button-change">
-            <img class="page-slider__img" src="/static/images/next.svg" alt="back">
+      </div>
+      <div class="page-slider__bottom-panel">
+        <button class="page-slider__button page-slider__button_back">
+          <!-- <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="24.5791" y="32.6992" width="16.5512" height="3" rx="1.5" transform="rotate(-135 24.5791 32.6992)" fill="#070707"/>
+            <rect x="26.7002" y="11.4199" width="16.5512" height="3" rx="1.5" transform="rotate(135 26.7002 11.4199)" fill="#070707"/>
+            </svg> -->
+        </button>
+        <div class="page-slider__pagination"> </div>
+        <button class="page-slider__button page-slider__button_next">
+          <!-- <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="17.4209" y="9.30084" width="16.5512" height="3" rx="1.5" transform="rotate(45 17.4209 9.30084)" fill="#070707"/>
+            <rect x="15.2998" y="30.5801" width="16.5512" height="3" rx="1.5" transform="rotate(-45 15.2998 30.5801)" fill="#070707"/>
+            </svg> -->
         </button>       
       
       </div>
@@ -129,21 +134,29 @@
       </div>
     </section>
     <section class="portfolio">
-      <div class="portfolio__wrapper">
-        <h2 class="portfolio__title"> Portfolio </h2>
-        <picture>
-          <source srcset="/static/images/portfolio.site.mobile.png"  media="(min-width:0px) and (max-width:599px)">
-          <source srcset="/static/images/portfolio.site.ipad.png"  media="(min-width:600px) and (max-width:1000px)">                   
-          <img class="portfolio__portfolio-img" src="/static/images/portfolio.site.png" alt="site img">
-        </picture>
-        <div class="portfolio__portfolio-general-block container">
-          <div class="portfolio__general-portfolio-information">
-            <a class="portfolio__training-company-link"> Learning site for DL Academy courses </a>
-            <div class="portfolio__portfolio-description"> A simple multi-page static site. The design layout was in Figma. HTML and CSS were used. 
-            The site is responsive and cross-browser, but without adding interactivity via JavaScript.</div>
-          </div>
+      <h2 class="portfolio__title"> Portfolio </h2>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="/static/images/portfolio.site.mobile.png"  media="(min-width:0px) and (max-width:599px)">
+                <source srcset="/static/images/portfolio.site.ipad.png"  media="(min-width:600px) and (max-width:1000px)">                   
+                <img class="portfolio__portfolio-img" src="/static/images/portfolio.site.png" alt="site img">
+              </picture>
+              <div class="portfolio__portfolio-general-block container">
+                <div class="portfolio__general-portfolio-information">
+                  <a class="portfolio__training-company-link"> Learning site for DL Academy courses </a>
+                  <div class="portfolio__portfolio-description"> A simple multi-page static site. The design layout was in Figma. HTML and CSS were used. 
+                  The site is responsive and cross-browser, but without adding interactivity via JavaScript.</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide__background-1 ">Slide 2</div>
+            <div class="swiper-slide swiper-slide__background-2">Slide 3</div>
         </div>
-      </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
     </section>
     @@include('footer/index.html')
 <div class="modal  modal_register-none modal_register-js">
@@ -152,7 +165,7 @@
       <label class="form__label" for="input-email-register"> Email
         <span class="form__label-star_red">*</span>
       </label>
-      <input class="form__input form__input_js" name="email" id="input-email-register" type="email">
+      <input class="form__input form__input_js email_js" name="email" id="input-email-register" type="text">
     </div>
     <div class="form__row">
       <div class="form__column">
@@ -173,7 +186,7 @@
         <label class="form__label" for="input-password-register"> Password
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="password" id="input-password-register" type="password">
+        <input class="form__input password_js" name="password" id="input-password-register" type="password">
       </div>
       <div class="form__column">
         <label class="form__label" for="repeat-password"> Repeat password
@@ -198,7 +211,7 @@
     </div>
     <fieldset class="form__checkbox">
       <label class="form__checkbox form__label-checkbox">
-        <input class="form__input visually-hidden" name="accept" type="checkbox">
+        <input class="form__input visually-hidden" name="accept" type="checkbox" value="yes">
         <span class="form__checkbox-indicator"> </span>
         <span class="form-register__checkbox-text"> Clicking on the button, you consent to the processing of your
           personal data.
@@ -231,13 +244,13 @@
         <label class="form__label" for="input-email-message"> Your Email
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="email" id="input-email-message" type="email">
+        <input class="form__input email_js" name="email" id="input-email-message" type="text">
       </div>
       <div class="form__column">
         <label class="form__label" for="input-phone"> Your mobile phone
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="phone" id="input-phone" type="tel">
+        <input class="form__input phone_js" name="phone" id="input-phone" type="tel">
       </div>
     </div>
     <div class="form__textarea">
@@ -246,7 +259,7 @@
     </div>
     <fieldset class="form__checkbox">
       <label class="form__checkbox form__label-checkbox">
-        <input class="form__input visually-hidden" name="accept" type="checkbox">
+        <input class="form__input visually-hidden" name="accept" type="checkbox" value="yes">
         <span class="form__checkbox-indicator"> </span>
         <span class="form-register__checkbox-text"> Clicking on the button, you consent to the processing of your
           personal data.
@@ -264,7 +277,7 @@
         <label class="form__label" for="input-email"> Email 
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input form__input_sign-js" name="email" id="input-email" type="email">
+        <input class="form__input form__input_sign-js email_js" name="email" id="input-email" type="text">
       </div>
       <div class="form__column form__row">
         <label class="form__label" for="input-password"> Password
@@ -277,10 +290,11 @@
       <img src="/static/images/close.svg" alt="X"> </button>
   </form>
 </div>
-    <button class="button-scroll button-scroll-up_js button-scroll_none button-scroll_js"> 
+    <button id="check" class="button-scroll button-scroll-up_js button-scroll_none button-scroll_js"> 
       <img class="button-scroll__img" src="/static/images/up.png" alt="up">      
     </button>
   </main>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="index.js"></script>
 </body>
 </html>

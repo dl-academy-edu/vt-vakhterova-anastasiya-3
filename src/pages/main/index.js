@@ -173,7 +173,7 @@ function getValuesForm(form) {
 
 function errorMessageInputCreate(input, text) {
   let message = document.createElement("div");
-  massage.classList.add("invalid-feedback");
+  message.classList.add("invalid-feedback");
   message.innerText = text;
 
   input.insertAdjacentElement("afterend", message); 
@@ -363,21 +363,58 @@ let shearWidth = +getComputedStyle(wrapper).width.split("px")[0];
 let numberSlides = innerWrapper.querySelectorAll(".page-slider__slide").length - 1;
 
 let activeSlide = 0;
+let dots = [];
 
 //ширина слайдов
-function init () {
+function initWidthSlides () {
+  shearWidth =+getComputedStyle(wrapper).width.split("px")[0];
   for (let i = 0; i < slides.length; i++)  {
     slides[i].style.width = shearWidth + "px";
   };
 };
 
-init () ;
+initWidthSlides () ;
+
+function init () {
+  for (let i = 0; i < slides.length; i++) {
+    let dot = document.createElement ("button");
+    dot.classList.add ("page-slider__dot");
+    if (i === activeSlide) {
+      dot.classList.add ("page-slider__dot_active");
+    }
+    dot.addEventListener ("click" , function () {
+      setActiveSlide(i);
+    })
+    dots.push(dot);
+
+    pagination.insertAdjacentElement ("beforeend" , dot );
+  };
+}
+init ();
+
 
 function setActiveSlide (index) {
+  if (index < 0 || index > numberSlides) {
+    return;
+  };
+    dots[activeSlide].classList.remove ("page-slider__dot_active");
+  dots[index].classList.add ("page-slider__dot_active");
+  if (activeSlide - index > 0) {
+    buttonNext.removeAttribute("disabled");
+  };
+  if (activeSlide - index < 0) {
+    buttonBack.removeAttribute("disabled");
+  };
+  if (index === 0) {
+    buttonBack.setAttribute("disabled", "disabled");
+  };
+  if (index === numberSlides) {
+    buttonNext.setAttribute("disabled", "disabled");
+  };
+
   innerWrapper.style.marginLeft = "-" + shearWidth*index + "px";
   activeSlide = index;
 };
-// setActiveSlide (3)
 
 
 buttonNext.addEventListener("click" , function () {
@@ -385,84 +422,19 @@ buttonNext.addEventListener("click" , function () {
   setActiveSlide (index);
 });
 
+buttonBack.addEventListener("click" , function () {
+  const index = activeSlide - 1;
+  setActiveSlide (index);
+});
 
+window.addEventListener("resize" , function () {
+  innerWrapper.style.transition = "";
+  initWidthSlides ();
+  setActiveSlide(activeSlide);
+  innerWrapper.style.transition = "margin-left .5s";
+  
+});
 
-// function setActiveSlide (index) {
-//   const indentML = +innerWrapper.style.marginLeft.split("px")[0];
-//   innerWrapper.style.marginLeft = `${indentML - shearWidth}px`;
-//     activeSlide = index;
-// }
-
-
-// buttonNext.addEventListener ("click", function () {
-//   setActiveSlide (activeSlide + 1);
-// })
-
-
-// function addWidthSlides () {
-//   for (slide of slides) {
-//     slide.style.width = `${shearWidth}px`;
-//   }
-// };
-
-// const changeActiveSlide = function (whereTo)  {
-//   const indentML = +innerWrapper.style.marginLeft.split("px")[0];
-//   switch (whereTo) {
-//     case "next":
-//       if (activeSlide < numberSlides) {
-//         innerWrapper.style.marginLeft = `${indentML - shearWidth}px`;
-//         activeSlide = activeSlide + 1;
-//         buttonBack.removeAttribute("disabled");
-//       }
-//       if (activeSlide === numberSlides) {
-//         buttonNext.setAttribute("disabled", "disabled");
-//       }
-//       break;
-//     case "back":
-//       if (activeSlide !== 0) {
-//         innerWrapper.style.marginLeft = `${indentML + shearWidth}px`;
-//         activeSlide = activeSlide - 1;
-//         buttonNext.removeAttribute("disabled");
-//       }
-//       if (activeSlide === 0) {
-//         buttonBack.setAttribute("disabled", "disabled");
-//       }
-//       break;
-//   }
-//   changeActivePoint(activeSlide);
-// };
-
-// buttonBack.setAttribute("disabled", "disabled");
-// addWidthSlides();
-// // for (i = 0; i < innerWrapper.children.length; i++) {
-// //   let newElem = document.createElement("button");
-// //   i === activeSlide
-// //     ? newElem.classList.add("slider__dot", "slider__dot_active")
-// //     : newElem.classList.add("slider__dot");
-// //   const activeIndex = i;
-// //   newElem.addEventListener("click", () => {
-// //     innerWrapper.style.transition = "margin-left .5s";
-// //     innerWrapper.style.marginLeft = `-${activeIndex * shearWidth}px`;
-// //     activeSlide = activeIndex;
-// //     changeActivePoint(activeIndex);
-// //     timerLogic();
-// //   });
-// //   pagination.append(newElem);
-// // }
-
-
-// buttonBack.addEventListener("click", function ()  {changeActiveSlide("back")});
-// buttonNext.addEventListener("click", function ()  {changeActiveSlide("next")});
-
-
-
-// window.addEventListener("resize", () => {
-//   shearWidth = +getComputedStyle(wrapper).width.split("px")[0];
-//   addWidthSlides();
-//   if (activeSlide > 0) {
-//     innerWrapper.style.marginLeft = `-${activeSlide * shearWidth}px`;
-//   }
-// });
 
 
 let mySwiper = new Swiper('.swiper-container', {

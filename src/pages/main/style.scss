@@ -53,15 +53,35 @@
     background-color: transparent;
     font-size: 20px;
     transition: all .5s;
+    color: #070707;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 34px;
+    line-height: 38px;
 
     &:not(:disabled) {
       &:hover, &:focus {
       cursor: pointer;
       border: 2.5px solid #828282;
-      color: #fff;
+      color: #828282;
+      font-family: "Gilroy";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 34px;
+      line-height: 38px;
     }
   }
-
+    &:disabled {
+      border: 2.5px solid #E5E5E5;
+      color: #E5E5E5;
+      font-family: "Gilroy";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 34px;
+      line-height: 38px;
+    }
+    
   }
 
   &__button_next {
@@ -72,6 +92,7 @@
   &__button_back {
     background-color: initial;
     padding: 0px;
+
   }
 
   &__slider-button {
@@ -80,9 +101,6 @@
     border-radius: 50%;
     width: 10px;
     height: 10px;
-
-
-
   }
 
   &__wrapper {
@@ -111,7 +129,6 @@
     border-radius: 50%;
     outline: none;
     cursor: pointer;
-    transition: background-color .4s;
     background-color: #E5E5E5;
     
     &:not(:last-child) {
@@ -121,12 +138,20 @@
     &_active {
       background-color:#070707;
     }
+
     
-    &:not(.slider__dot_active):hover, &:not(.slider__dot_active):focus {
+    &:not(.page-slider__dot_active):hover, &:not(.page-slider__dot_active):focus {
       background-color: #828282;
     }
   }
 }
+
+// .page-slider__button:hover .page-slider__button_back-svg > polyline:hover , .page-slider__button:focus .page-slider__button_back-svg > polyline:focus{
+//   stroke: #828282;;
+//   cursor: pointer;
+//   opacity: 1;
+// }
+
 
 .aboutMe {
   background-color: #f6f6f6;

@@ -152,25 +152,25 @@
     </section>
     @@include('footer/index.html')
 <div class="modal  modal_register-none modal_register-js">
-  <form name="register" class="form">
+  <form name="register" class="form" method="POST">
     <div class="form__row-column_600">
       <label class="form__label" for="input-email-register"> Email
         <span class="form__label-star_red">*</span>
       </label>
-      <input class="form__input form__input_js email_js" name="email" id="input-email-register" type="text">
+      <input class="form__input form__input_js email_js" name="email" id="input-email-register" type="text" required>
     </div>
     <div class="form__row">
       <div class="form__column">
         <label class="form__label" for="input-name-register"> Name
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="name" id="input-name-register" type="text">
+        <input class="form__input" name="name" id="input-name-register" type="text" required>
       </div>
       <div class="form__column">
         <label class="form__label" for="input-surname-register"> Surname
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="surname" id="input-surname-register" type="text">
+        <input class="form__input" name="surname" id="input-surname-register" type="text" required>
       </div>
     </div>
     <div class="form__row">
@@ -178,13 +178,13 @@
         <label class="form__label" for="input-password-register"> Password
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input password_js" name="password" id="input-password-register" type="password">
+        <input class="form__input password_js" name="password" id="input-password-register" type="password" required>
       </div>
       <div class="form__column">
         <label class="form__label" for="repeat-password"> Repeat password
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="password" id="repeat-password" type="password">
+        <input class="form__input" name="password" id="repeat-password" type="password" required>
       </div>
     </div>
     <div class="form__row">
@@ -192,13 +192,13 @@
         <label class="form__label" for="input-location"> Location
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="location" id="input-location" type="text">
+        <input class="form__input" name="location" id="input-location" type="text" required>
       </div>
       <div class="form__column">
         <label class="form__label" for="input-age"> Age
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="age" id="input-age" type="number">
+        <input class="form__input" name="age" id="input-age" type="number" required>
       </div>
     </div>
     <fieldset class="form__checkbox">
@@ -210,25 +210,25 @@
         </span>
       </label>
     </fieldset>
-    <button type="submit" class="form__button" type="submit"> Sign up </button>
+    <button type="submit" class="form__button"> Sign up </button>
     <button class="form__x form__x_js" type="button">
       <img src="/static/images/close.svg" alt="X"> </button>
   </form>
 </div>
 <div class="modal modal_masage-none modal_massage-js">
-  <form name="massage" class="form">
+  <form name="massage" class="form" method="POST">
     <div class="form__row">
       <div class="form__column">
         <label class="form__label" for="input-name-message"> What is your name? 
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input form__input_massage-js " name="name" id="input-name-message" type="text">
+        <input class="form__input form__input_massage-js " name="name" id="input-name-message" type="text" required>
       </div>
       <div class="form__column">
         <label class="form__label" for="input-subject"> Message subject
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="subject" id="input-subject" type="text">
+        <input class="form__input" name="subject" id="input-subject" type="text" required>
       </div>
     </div>
     <div class="form__row">
@@ -236,13 +236,13 @@
         <label class="form__label" for="input-email-message"> Your Email
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input email_js" name="email" id="input-email-message" type="text">
+        <input class="form__input email_js" name="email" id="input-email-message" type="text" required>
       </div>
       <div class="form__column">
         <label class="form__label" for="input-phone"> Your mobile phone
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input phone_js" name="phone" id="input-phone" type="tel">
+        <input class="form__input phone_js" name="phone" id="input-phone" type="tel" required>
       </div>
     </div>
     <div class="form__textarea">
@@ -258,26 +258,26 @@
         </span>
       </label>
     </fieldset>
-    <button type="submit" class="form__button" type="submit"> Sign up </button>
+    <button type="submit" class="form__button"> Sign up </button>
     <button class="form__x form__x_massage-js" type="button">
       <img src="/static/images/close.svg" alt="X"> </button>
   </form>
 </div>
 <div class="modal modal_sign-none modal_sign-js">
-  <form name="sign" class="form form__sign_width">
+  <form name="sign" class="form form__sign_width" method="POST">
       <div class="form__column form__row">
         <label class="form__label" for="input-email"> Email 
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input form__input_sign-js email_js" name="email" id="input-email" type="text">
+        <input class="form__input form__input_sign-js email_js" name="email" id="input-email" type="text" required>
       </div>
       <div class="form__column form__row">
         <label class="form__label" for="input-password"> Password
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="password" id="input-password" type="password">
+        <input class="form__input" name="password" id="input-password" type="password" required>
       </div>
-    <button type="submit" class="form__button" type="submit"> Log in </button>
+    <button type="submit" class="form__button"> Log in </button>
     <button class="form__x form__x_sign-js" type="button">
       <img src="/static/images/close.svg" alt="X"> </button>
   </form>

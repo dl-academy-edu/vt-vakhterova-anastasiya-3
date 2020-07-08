@@ -1,8 +1,3 @@
-.filter-form {
-  display: flex;
-  flex-direction: row;
-}
-
 /*checkbox*/
 
 .filter-form__filter-item:checked ~ .filter-form__filter-item-indicator::after {
@@ -19,6 +14,9 @@
 
 
 .filter-form {
+
+  display: flex;
+  flex-direction: column;
   border: none;
 
   &__filter-block{
@@ -61,6 +59,121 @@
     top: 0px;
     position: absolute;
   }
+  &__filter-indicator_pr {
+    padding-right: 30px;
+  }
+
+  &__filter-indicator-colour_1::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2.5px solid #2176FF;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+  }
+
+  &__filter-indicator-colour_2::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2.5px solid #33A1FD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+  }
+
+  &__filter-indicator-colour_3::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2.5px solid #FDCA40;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+  }
+
+  &__filter-indicator-colour_4::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2.5px solid #57E2E5;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+  }
+
+  &__filter-indicator-colour_5::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2.5px solid #F79824;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+  }
+
+  &__filter-indicator-colour_6::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2.5px solid #E08DAC;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+  }
+
+  &__filter-indicator-colour_7::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2.5px solid #6A7FDB;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+  }
+
+  &__filter-indicator-colour_8::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2.5px solid #45CB85;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+  }
+
+
+  &__filter-tags {
+    display: flex;
+    flex-direction: row;
+    width: 148px;
+    flex-wrap: wrap;
+  }
 
   &__filter-item {
     font-family: "Gilroy";
@@ -101,6 +214,23 @@
 
   }
 
+  &__input {
+    width: 873px;
+    height: 50px;
+    border: 2.5px solid #E5E5E5;
+
+
+  }
+  
+  &__wrapper-1 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__wrapper-2 {
+    display: flex;
+    justify-content: space-between;
+  }
 
 }
 
@@ -149,4 +279,44 @@
   line-height: 16px;
   text-align: center;
   margin-bottom: -5px;
+}
+
+
+
+.selector {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+
+  &__pages {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__page-item{
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color:  #E5E5E5;
+    margin-right: 10px;
+  }
+
+  &__button_back , &__button_next {
+    width: 42px;
+    height: 42px;
+    outline: 0;
+    border: 2.5px solid #070707;
+    border-radius: 50px;
+    background-color: transparent;
+    transition: .5s;
+    color: #070707;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 38px;
+
+  }
 }

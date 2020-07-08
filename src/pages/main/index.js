@@ -389,6 +389,10 @@ function init () {
 
     pagination.insertAdjacentElement ("beforeend" , dot );
   };
+
+  if (localStorage.getItem ("activeSlide")) {
+    setActiveSlide(+localStorage.getItem ("activeSlide"));
+  }
 }
 init ();
 
@@ -414,6 +418,11 @@ function setActiveSlide (index) {
 
   innerWrapper.style.marginLeft = "-" + shearWidth*index + "px";
   activeSlide = index;
+  localStorage.setItem ("activeSlide" , activeSlide);
+
+
+
+
 };
 
 
@@ -434,6 +443,8 @@ window.addEventListener("resize" , function () {
   innerWrapper.style.transition = "margin-left .5s";
   
 });
+
+
 
 
 

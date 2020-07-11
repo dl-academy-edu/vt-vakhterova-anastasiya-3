@@ -205,7 +205,7 @@
       <label class="form__checkbox form__label-checkbox">
         <input class="form__input visually-hidden" name="accept" type="checkbox" value="yes">
         <span class="form__checkbox-indicator"> </span>
-        <span class="form-register__checkbox-text"> Clicking on the button, you consent to the processing of your
+        <span class="form-register__checkbox-text "> Clicking on the button, you consent to the processing of your
           personal data.
         </span>
       </label>
@@ -215,20 +215,20 @@
       <img src="/static/images/close.svg" alt="X"> </button>
   </form>
 </div>
-<div class="modal modal_masage-none modal_massage-js">
-  <form name="massage" class="form" method="POST">
+<div class="modal modal_message-none modal_message-js">
+  <form name="message" class="form" method="POST">
     <div class="form__row">
       <div class="form__column">
         <label class="form__label" for="input-name-message"> What is your name? 
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input form__input_massage-js " name="name" id="input-name-message" type="text" required>
+        <input class="form__input form__input_message-js name_js " name="body" id="input-name-message" type="text" required>
       </div>
       <div class="form__column">
         <label class="form__label" for="input-subject"> Message subject
-          <span class="form__label-star_red">*</span>
+          <span class="form__label-star_red message_js">*</span>
         </label>
-        <input class="form__input" name="subject" id="input-subject" type="text" required>
+        <input class="form__input message-subject_js" name="body" id="input-subject" type="text" required>
       </div>
     </div>
     <div class="form__row">
@@ -236,22 +236,22 @@
         <label class="form__label" for="input-email-message"> Your Email
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input email_js" name="email" id="input-email-message" type="text" required>
+        <input class="form__input email_js" name="to" id="input-email-message" type="email" required>
       </div>
       <div class="form__column">
         <label class="form__label" for="input-phone"> Your mobile phone
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input phone_js" name="phone" id="input-phone" type="tel" required>
+        <input class="form__input phone_js" name="body" id="input-phone" type="tel" required>
       </div>
     </div>
     <div class="form__textarea">
-      <label class="form__label" for="input-massage"> What do you want to discuss with me?</label>
-      <textarea class="form__textarea-massage" name="message" id="input-massage" cols="30" rows="10" style="max-width:600px;"> </textarea>
+      <label class="form__label" for="input-message"> What do you want to discuss with me?</label>
+      <textarea class="form__textarea-message" name="body" id="input-message" cols="30" rows="10" style="max-width:600px;"> </textarea>
     </div>
     <fieldset class="form__checkbox">
       <label class="form__checkbox form__label-checkbox">
-        <input class="form__input visually-hidden" name="accept" type="checkbox" value="yes">
+        <input class="form__input visually-hidden" name="body" type="checkbox" value="yes">
         <span class="form__checkbox-indicator"> </span>
         <span class="form-register__checkbox-text"> Clicking on the button, you consent to the processing of your
           personal data.
@@ -259,7 +259,7 @@
       </label>
     </fieldset>
     <button type="submit" class="form__button"> Sign up </button>
-    <button class="form__x form__x_massage-js" type="button">
+    <button class="form__x form__x_message-js" type="button">
       <img src="/static/images/close.svg" alt="X"> </button>
   </form>
 </div>
@@ -287,6 +287,7 @@
     </button>
   </main>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
   <script src="index.js"></script>
 </body>
 </html>

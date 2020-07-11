@@ -297,7 +297,7 @@
   z-index: 1;
 }
 
-.modal_register-none,.modal_masage-none,.modal_sign-none {
+.modal_register-none,.modal_message-none,.modal_sign-none {
   display: none;
 }
 
@@ -408,7 +408,7 @@
     flex-direction: column;
     margin-bottom: 22px;
 
-    &-massage {
+    &-message {
       height: 150px;
       margin-top: 6px;
       border: 2.5px solid #e5e5e5;

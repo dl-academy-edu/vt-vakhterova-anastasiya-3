@@ -66,27 +66,27 @@
 (function messageFun() {
 
   var button2 = document.querySelector(".footer__button_js");
-  var messageForm = document.querySelector(".modal_massage-js");
-  var buttonClose2 = document.querySelector(".form__x_massage-js");
-  var input2 = document.querySelector(".form__input_massage-js");
+  var messageForm = document.querySelector(".modal_message-js");
+  var buttonClose2 = document.querySelector(".form__x_message-js");
+  var input2 = document.querySelector(".form__input_message-js");
 
 
   //открытие
   button2.addEventListener("click", function () {
-    messageForm.classList.remove("modal_masage-none");
+    messageForm.classList.remove("modal_message-none");
     input2.focus();
   });
 
   //Закрытие
   buttonClose2.addEventListener("click", function () {
-    messageForm.classList.add("modal_masage-none");
+    messageForm.classList.add("modal_message-none");
     button2.focus();
   });
 
   //Закрытие escape
   window.addEventListener("keydown", function (event) {
-    if (event.code == "Escape" && !messageForm.classList.contains("modal_masage-none")) {
-      messageForm.classList.add("modal_masage-none");
+    if (event.code == "Escape" && !messageForm.classList.contains("modal_message-none")) {
+      messageForm.classList.add("modal_message-none");
       button2.focus();
     }
   });
@@ -162,11 +162,11 @@ function getValuesForm(form) {
     }
   };
 
-  let T = textares.length;
-  for (let i = 0; i < T; i++) {
-    const textarea = textares[i];
-    body[textarea.name] = textarea.value;
-  };
+  // let T = textares.length;
+  // for (let i = 0; i < T; i++) {
+  //   const textarea = textares[i];
+  //   body[textarea.name] = textarea.value;
+  // };
 
   return body;
 };
@@ -194,6 +194,10 @@ function phoneCheck(phone) {
   return phone.match(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/);
 };
 
+
+
+
+
 function setInvalidInput(input) {
   input.classList.add("form__input-invalid");
   input.addEventListener("input", function handlerInput(event) {
@@ -202,13 +206,6 @@ function setInvalidInput(input) {
   });
 };
 
-// function setInvalidTextarea(textarea) {
-//   textarea.classList.add ("form__input-invalid");
-//   textarea.addEventListener("textarea", function handlerTextarea (event) {
-//     textarea.classList.remove("form__input-invalid");
-//     textarea.removeEventListener ("textarea", handlerTextarea);
-//   });
-// };
 
 function setFormErrors(form, errors) {
   const textares = form.querySelectorAll("textarea");
@@ -232,15 +229,19 @@ function setFormErrors(form, errors) {
     };
   };
 
-  // for(let i=0; i<T; i++) {
-  //   const textarea = textares[i];
-  //   switch (textarea) {
-  //     default:
-  //       if (errors  [textarea.name]) {
-  //         setInvalidTextarea (textarea);
-  //       };
-  //   };
-  // };
+
+}
+
+
+
+const SERVER_URL = "https://academy.directlinedev.com";
+function sendReq({url, method="GET", body={}, headers={}}) {
+  const settings = {
+    method,
+    body,
+    headers,
+  };
+  return fetch(SERVER_URL + url, settings);
 }
 
 (function () {
@@ -252,11 +253,42 @@ function setFormErrors(form, errors) {
     console.log(values);
     const email = form.querySelector(".email_js");
     let errors = {}
+    
+    sendReq({
+      url: "/api/users", 
+      method: "POST", 
+      body: JSON.stringify(values),
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+    })
+
+    
+    .then(function (res) {
+      return res.json();
+    })
+
+    .then(function (json) {
+      if(json.success) {
+        let user = json.data;
+        alert(`пользователь ${user.name} ${user.surname}`);
+      } else {
+        throw json.errors
+      }
+    })
+
+    .catch(function(errors) {
+      setFormErrors (form, errors)       
+      alert(`${JSON.stringify(errors, null, 2)}`)
+    });
+
+
 
     if (!mailCheck(values.email)) {
       setInvalidInput(email);
       errors.email = "Please enter a valid email address (your entry is not in the format -somebody@example.com))";
     };
+  
 
     if (!(values.email && values.email.length)) {
       errors.email = "This field is required";
@@ -282,6 +314,8 @@ function setFormErrors(form, errors) {
     };
 
     setFormErrors(form, errors);
+
+    
   });
 
 
@@ -310,14 +344,48 @@ function setFormErrors(form, errors) {
   });
 
 
-  let formMassage = document.forms.massage;
-  formMassage.addEventListener("submit", function (event) {
+  let formMessage = document.forms.message;
+  formMessage.addEventListener("submit", function (event) {
     event.preventDefault();
     const form = event.target;
     const values = getValuesForm(form);
     console.log(values);
+    const name = form.querySelector(".name_js");
     const email = form.querySelector(".email_js");
+
+    let messageValues = {}; 
+    messageValues.to = values.email;
+    messageValues.body = JSON.stringify(values);
     let errors = {};
+
+    sendReq({
+      url: "/api/emails", 
+      method: "POST", 
+      body: JSON.stringify(messageValues),
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+    })
+
+    
+    .then(function (res) {
+      return res.json();
+    })
+
+    .then(function (json) {
+      if(json.success) {
+        let user = json.data;
+        alert(`пользователь ${user.name} ${user.surname}`);
+      } else {
+        throw json.errors
+      }
+    })
+
+    .catch(function(errors) {
+      setFormErrors (form, errors)       
+      alert(`${JSON.stringify(errors, null, 2)}`)
+    });
+
 
     if (!mailCheck(values.email)) {
       setInvalidInput(email);
@@ -459,35 +527,3 @@ let mySwiper = new Swiper('.swiper-container', {
 
 
 
-
-let basePath = "https://academy.directlinedev.com";
-
-function sendReq({ url, method = "GET", body = {}, headers = {} }) {
-  const settings = {
-    method,
-    body,
-    headers,
-  };
-
-  return fetch(basePath + url, settings);
-
-}
-
-function register(e) {
-  e.preventDefault();
-  let values = getValuesForm(e.target);
-  console.log(values);
-  sendReq({
-    url: "/api/users",
-    method: "POST",
-    body: JSON.stringify(values),
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8'
-    },
-
-  })
-    .then(function (res) {
-      console.log(res)
-
-    });
-}

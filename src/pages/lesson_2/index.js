@@ -17,7 +17,31 @@ function first() {
 
 first();
 
-//задание 2
+
+//Задание 2
+
+function second() {
+	let num = +prompt("Введите число до 40");
+
+	if (num >= 40) {
+		alert("Ошибка! Вы ввели большое число");
+
+		second();
+
+  } else if(Number.isNaN(num)) {
+		alert("Ошибка! Введено не число, введи повторно");
+
+		second();
+
+  } else {
+		console.log(num);
+		alert("Число принято");
+	}
+}
+
+second ();
+
+//задание 3
 
 (function () {
 

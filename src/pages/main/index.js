@@ -27,7 +27,8 @@
   });
 
 
-}) ();
+})();
+
 
 
 (function regFun() {
@@ -41,24 +42,24 @@
   //открытие
   button1.addEventListener("click", function () {
     regForm.classList.remove("modal_register-none");
-  input1.focus();
-});
+    input1.focus();
+  });
 
-//Закрытие
+  //Закрытие
   buttonClose1.addEventListener("click", function () {
     regForm.classList.add("modal_register-none");
-  button1.focus();
-});
-
-//Закрытие escape
-  window.addEventListener("keydown", function (event) {
-  if (event.code == "Escape" && !regForm.classList.contains("modal_register-none")) {
-    regForm.classList.add("modal_register-none");
     button1.focus();
-  }
-});
-  
-} ) ();
+  });
+
+  //Закрытие escape
+  window.addEventListener("keydown", function (event) {
+    if (event.code == "Escape" && !regForm.classList.contains("modal_register-none")) {
+      regForm.classList.add("modal_register-none");
+      button1.focus();
+    }
+  });
+
+})();
 
 
 
@@ -73,28 +74,28 @@
   //открытие
   button2.addEventListener("click", function () {
     messageForm.classList.remove("modal_masage-none");
-  input2.focus();
-});
+    input2.focus();
+  });
 
-//Закрытие
+  //Закрытие
   buttonClose2.addEventListener("click", function () {
     messageForm.classList.add("modal_masage-none");
-  button2.focus();
-});
-
-//Закрытие escape
-  window.addEventListener("keydown", function (event) {
-  if (event.code == "Escape" && !messageForm.classList.contains("modal_masage-none")) {
-    messageForm.classList.add("modal_masage-none");
     button2.focus();
-  }
-});
-  
-} ) ();
+  });
+
+  //Закрытие escape
+  window.addEventListener("keydown", function (event) {
+    if (event.code == "Escape" && !messageForm.classList.contains("modal_masage-none")) {
+      messageForm.classList.add("modal_masage-none");
+      button2.focus();
+    }
+  });
+
+})();
 
 
 
-(function  () {
+(function () {
 
   let buttonScroll = document.querySelector(".button-scroll_js");
 
@@ -108,27 +109,27 @@
 
   });
 
-window.onload = function () {
-  var scrolled;
-  var timer;
+  window.onload = function () {
+    var scrolled;
+    var timer;
 
-  document.querySelector ("button.button-scroll-up_js").onclick = function () {
-    scrolled=window.pageYOffset;
-    scrollToTop ();
-  } 
-  function scrollToTop() {
-    if (scrolled > 0) {
-      window.scrollTo (0,scrolled);
-      scrolled = scrolled - 100; // скорость прокрутки
-      timer = setTimeout (scrollToTop, 40);
+    document.querySelector("button.button-scroll-up_js").onclick = function () {
+      scrolled = window.pageYOffset;
+      scrollToTop();
     }
-    else {
-      clearTimeout (timer);
-      window.scrollTo (0,0);
-    }
+    function scrollToTop() {
+      if (scrolled > 0) {
+        window.scrollTo(0, scrolled);
+        scrolled = scrolled - 100; // скорость прокрутки
+        timer = setTimeout(scrollToTop, 40);
+      }
+      else {
+        clearTimeout(timer);
+        window.scrollTo(0, 0);
+      }
+    };
+
   };
-  
-};
 
 })();
 
@@ -138,33 +139,33 @@ window.onload = function () {
 
 function getValuesForm(form) {
   let body = {};
-  const inputs  = form.querySelectorAll("input");
-  const textares  = form.querySelectorAll("textarea");
+  const inputs = form.querySelectorAll("input");
+  const textares = form.querySelectorAll("textarea");
   let l = inputs.length;
-  for(let i=0; i<l; i++) {
+  for (let i = 0; i < l; i++) {
     const input = inputs[i];
 
     switch (input.type) {
       case "checkbox":
-        if (!body [input.name]) {
-          body [input.name] = [];
+        if (!body[input.name]) {
+          body[input.name] = [];
         }
         if (input.checked) {
-          const inputL = body [input.name].length;
-          body [input.name] [inputL] = input.value ;
+          const inputL = body[input.name].length;
+          body[input.name][inputL] = input.value;
         }
         break;
 
       default:
-        body [input.name] = input.value;
+        body[input.name] = input.value;
         break;
     }
   };
 
   let T = textares.length;
-  for(let i=0; i<T; i++) {
+  for (let i = 0; i < T; i++) {
     const textarea = textares[i];
-    body [textarea.name] = textarea.value;
+    body[textarea.name] = textarea.value;
   };
 
   return body;
@@ -176,12 +177,12 @@ function errorMessageInputCreate(input, text) {
   message.classList.add("invalid-feedback");
   message.innerText = text;
 
-  input.insertAdjacentElement("afterend", message); 
-  input.addEventListener("input", function handlerInput (event) {
+  input.insertAdjacentElement("afterend", message);
+  input.addEventListener("input", function handlerInput(event) {
     message.remove("");
-    input.removeEventListener ("input", handlerInput);
+    input.removeEventListener("input", handlerInput);
   });
-  
+
 };
 
 
@@ -194,10 +195,10 @@ function phoneCheck(phone) {
 };
 
 function setInvalidInput(input) {
-  input.classList.add ("form__input-invalid");
-  input.addEventListener("input", function handlerInput (event) {
+  input.classList.add("form__input-invalid");
+  input.addEventListener("input", function handlerInput(event) {
     input.classList.remove("form__input-invalid");
-    input.removeEventListener ("input", handlerInput);
+    input.removeEventListener("input", handlerInput);
   });
 };
 
@@ -210,23 +211,23 @@ function setInvalidInput(input) {
 // };
 
 function setFormErrors(form, errors) {
-  const textares  = form.querySelectorAll("textarea");
-  const inputs  = form.querySelectorAll("input");
+  const textares = form.querySelectorAll("textarea");
+  const inputs = form.querySelectorAll("input");
   let l = inputs.length;
   let T = textares.length;
 
-  for(let i=0; i<l; i++) {
+  for (let i = 0; i < l; i++) {
     const input = inputs[i];
     switch (input.type) {
       case "checkbox":
-        if (errors  [input.name]) {
-          setInvalidInput (input);
+        if (errors[input.name]) {
+          setInvalidInput(input);
         };
         break;
       default:
-        if (errors  [input.name]) {
-          setInvalidInput (input);
-          errorMessageInputCreate (input, errors [input.name] );
+        if (errors[input.name]) {
+          setInvalidInput(input);
+          errorMessageInputCreate(input, errors[input.name]);
         };
     };
   };
@@ -243,17 +244,17 @@ function setFormErrors(form, errors) {
 }
 
 (function () {
-  let formRegister= document.forms.register;
+  let formRegister = document.forms.register;
   formRegister.addEventListener("submit", function (event) {
     event.preventDefault();
     const form = event.target;
-    const values =getValuesForm(form);
-    console.log (values);
-    const email = form.querySelector (".email_js");
+    const values = getValuesForm(form);
+    console.log(values);
+    const email = form.querySelector(".email_js");
     let errors = {}
 
-    if (!mailCheck (values.email)) {
-      setInvalidInput (email);
+    if (!mailCheck(values.email)) {
+      setInvalidInput(email);
       errors.email = "Please enter a valid email address (your entry is not in the format -somebody@example.com))";
     };
 
@@ -280,21 +281,21 @@ function setFormErrors(form, errors) {
       errors.age = "This field is required";
     };
 
-    setFormErrors (form, errors);
+    setFormErrors(form, errors);
   });
 
 
-  let formSign= document.forms.sign;
+  let formSign = document.forms.sign;
   formSign.addEventListener("submit", function (event) {
     event.preventDefault();
     const form = event.target;
-    const values =getValuesForm(form);
-    console.log (values);
-    const email = form.querySelector (".email_js");
+    const values = getValuesForm(form);
+    console.log(values);
+    const email = form.querySelector(".email_js");
     let errors = {};
 
-    if (!mailCheck (values.email)) {
-      setInvalidInput (email);
+    if (!mailCheck(values.email)) {
+      setInvalidInput(email);
       errors.email = "Please enter a valid email address (your entry is not in the format -somebody@example.com))";
     };
 
@@ -305,21 +306,21 @@ function setFormErrors(form, errors) {
     if (!(values.password && values.password.length)) {
       errors.password = "This field is required";
     };
-    setFormErrors (form, errors);
+    setFormErrors(form, errors);
   });
 
 
-  let formMassage= document.forms.massage;
+  let formMassage = document.forms.massage;
   formMassage.addEventListener("submit", function (event) {
     event.preventDefault();
     const form = event.target;
-    const values =getValuesForm(form);
-    console.log (values);
-    const email = form.querySelector (".email_js");
+    const values = getValuesForm(form);
+    console.log(values);
+    const email = form.querySelector(".email_js");
     let errors = {};
 
-    if (!mailCheck (values.email)) {
-      setInvalidInput (email);
+    if (!mailCheck(values.email)) {
+      setInvalidInput(email);
       errors.email = "Please enter a valid email address (your entry is not in the format -somebody@example.com))";
     };
 
@@ -327,9 +328,9 @@ function setFormErrors(form, errors) {
       errors.email = "This field is required";
     };
 
-    if (!phoneCheck (values.phone)) {
-      const input = form.querySelector (".phone_js");
-      input.classList.add ("form__input-invalid")
+    if (!phoneCheck(values.phone)) {
+      const input = form.querySelector(".phone_js");
+      input.classList.add("form__input-invalid")
     };
 
     if (!(values.name && values.name.length)) {
@@ -344,9 +345,11 @@ function setFormErrors(form, errors) {
       errors.subject = "This field is required";
     };
 
-    setFormErrors (form, errors);
+    setFormErrors(form, errors);
   });
-}) ();
+
+
+})();
 
 
 
@@ -366,43 +369,43 @@ let activeSlide = 0;
 let dots = [];
 
 //ширина слайдов
-function initWidthSlides () {
-  shearWidth =+getComputedStyle(wrapper).width.split("px")[0];
-  for (let i = 0; i < slides.length; i++)  {
+function initWidthSlides() {
+  shearWidth = +getComputedStyle(wrapper).width.split("px")[0];
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.width = shearWidth + "px";
   };
 };
 
-initWidthSlides () ;
+initWidthSlides();
 
-function init () {
+function init() {
   for (let i = 0; i < slides.length; i++) {
-    let dot = document.createElement ("button");
-    dot.classList.add ("page-slider__dot");
+    let dot = document.createElement("button");
+    dot.classList.add("page-slider__dot");
     if (i === activeSlide) {
-      dot.classList.add ("page-slider__dot_active");
+      dot.classList.add("page-slider__dot_active");
     }
-    dot.addEventListener ("click" , function () {
+    dot.addEventListener("click", function () {
       setActiveSlide(i);
     })
     dots.push(dot);
 
-    pagination.insertAdjacentElement ("beforeend" , dot );
+    pagination.insertAdjacentElement("beforeend", dot);
   };
 
-  if (localStorage.getItem ("activeSlide")) {
-    setActiveSlide(+localStorage.getItem ("activeSlide"));
+  if (localStorage.getItem("activeSlide")) {
+    setActiveSlide(+localStorage.getItem("activeSlide"));
   }
 }
-init ();
+init();
 
 
-function setActiveSlide (index) {
+function setActiveSlide(index) {
   if (index < 0 || index > numberSlides) {
     return;
   };
-    dots[activeSlide].classList.remove ("page-slider__dot_active");
-  dots[index].classList.add ("page-slider__dot_active");
+  dots[activeSlide].classList.remove("page-slider__dot_active");
+  dots[index].classList.add("page-slider__dot_active");
   if (activeSlide - index > 0) {
     buttonNext.removeAttribute("disabled");
   };
@@ -416,36 +419,31 @@ function setActiveSlide (index) {
     buttonNext.setAttribute("disabled", "disabled");
   };
 
-  innerWrapper.style.marginLeft = "-" + shearWidth*index + "px";
+  innerWrapper.style.marginLeft = "-" + shearWidth * index + "px";
   activeSlide = index;
-  localStorage.setItem ("activeSlide" , activeSlide);
-
-
+  localStorage.setItem("activeSlide", activeSlide);
 
 
 };
 
 
-buttonNext.addEventListener("click" , function () {
+buttonNext.addEventListener("click", function () {
   const index = activeSlide + 1;
-  setActiveSlide (index);
+  setActiveSlide(index);
 });
 
-buttonBack.addEventListener("click" , function () {
+buttonBack.addEventListener("click", function () {
   const index = activeSlide - 1;
-  setActiveSlide (index);
+  setActiveSlide(index);
 });
 
-window.addEventListener("resize" , function () {
+window.addEventListener("resize", function () {
   innerWrapper.style.transition = "";
-  initWidthSlides ();
+  initWidthSlides();
   setActiveSlide(activeSlide);
   innerWrapper.style.transition = "margin-left .5s";
-  
+
 });
-
-
-
 
 
 let mySwiper = new Swiper('.swiper-container', {
@@ -458,3 +456,38 @@ let mySwiper = new Swiper('.swiper-container', {
   },
 
 })
+
+
+
+
+let basePath = "https://academy.directlinedev.com";
+
+function sendReq({ url, method = "GET", body = {}, headers = {} }) {
+  const settings = {
+    method,
+    body,
+    headers,
+  };
+
+  return fetch(basePath + url, settings);
+
+}
+
+function register(e) {
+  e.preventDefault();
+  let values = getValuesForm(e.target);
+  console.log(values);
+  sendReq({
+    url: "/api/users",
+    method: "POST",
+    body: JSON.stringify(values),
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+
+  })
+    .then(function (res) {
+      console.log(res)
+
+    });
+}

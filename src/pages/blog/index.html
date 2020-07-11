@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Главная</title>
+  <title>Blog</title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
               <a class="header__nav-item" href="/pages/blog/index.html"> My blog </a>
             </li>
             <li>
-              <a class="header__nav-item" href="/pages/blog/index.html"> My profile </a>
+              <a class="header__nav-item" href="/pages/profile/index.html"> My profile </a>
             </li>
           </ul>
         </nav>
@@ -37,75 +37,75 @@
       })
     </div>
     <div class="filter container">
-      <form class="filter-form" name="filterForm">
+      <form class="filter-form" name="filterForm" method="GET">
         <div class="filter-form__wrapper-1">
-          <fieldset class="filter-form__filter-block ">
+          <fieldset class="filter-form__filter-block filter-form__filter-element-amount_mb">
             <legend class="filter-form__filter-name"> Tags </legend>
-            <ul class="filter-form__filter-list filter-form__filter-tags hidden-marker">
-              <li class="filter-form__filter-element-amount_mb">
-                <label class="filter-form__filter-item">
-                  <input class="filter-form__filter-item visually-hidden" name="tag" type="checkbox" value="colour1">
+            <ul class="filter-form__filter-list filter-form__filter-tags hidden-marker tags-box_js">
+              <!-- <li class="filter-form__filter-element-amount_mb">
+                <label for="1" class="filter-form__filter-item">
+                  <input id="1" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour1">
                   <span
                     class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_1 filter-form__filter-indicator_pr">
                   </span>
                 </label>
               </li>
               <li class="filter-form__filter-element-amount_mb">
-                <label class="filter-form__filter-item">
-                  <input class="filter-form__filter-item visually-hidden" name="tag" type="checkbox" value="colour2">
+                <label for="2" class="filter-form__filter-item">
+                  <input id="2" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour2">
                   <span
                     class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_2 filter-form__filter-indicator_pr">
                   </span>
                 </label>
               </li>
               <li class="filter-form__filter-element-amount_mb">
-                <label class="filter-form__filter-item">
-                  <input class="filter-form__filter-item visually-hidden" name="tag" type="checkbox" value="colour3">
+                <label for="3" class="filter-form__filter-item">
+                  <input id="3" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour3">
                   <span
                     class="filter-form__filter-item-indicator  filter-form__filter-indicator-colour_3 filter-form__filter-indicator_pr">
                   </span>
                 </label>
               </li>
               <li class="filter-form__filter-element-amount_mb">
-                <label class="filter-form__filter-item">
-                  <input class="filter-form__filter-item visually-hidden" name="tag" type="checkbox" value="colour4">
+                <label for="4" class="filter-form__filter-item">
+                  <input id="4" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour4">
                   <span
                     class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_4 filter-form__filter-indicator_pr">
                   </span>
                 </label>
               </li>
               <li class="filter-form__filter-element-amount_mb">
-                <label class="filter-form__filter-item">
-                  <input class="filter-form__filter-item visually-hidden" name="tag" type="checkbox" value="colour5">
+                <label for="5" class="filter-form__filter-item">
+                  <input id="5" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour5">
                   <span
                     class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_5 filter-form__filter-indicator_pr">
                   </span>
                 </label>
               </li>
               <li class="filter-form__filter-element-amount_mb">
-                <label class="filter-form__filter-item">
-                  <input class="filter-form__filter-item visually-hidden" name="tag" type="checkbox" value="colour6">
+                <label for="6"  class="filter-form__filter-item">
+                  <input id="6" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour6">
                   <span
                     class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_6 filter-form__filter-indicator_pr">
                   </span>
                 </label>
               </li>
               <li class="filter-form__filter-element-amount_mb">
-                <label class="filter-form__filter-item">
-                  <input class="filter-form__filter-item visually-hidden" name="tag" type="checkbox" value="colour7">
+                <label for="7" class="filter-form__filter-item">
+                  <input id="7" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour7">
                   <span
                     class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_7 filter-form__filter-indicator_pr">
                   </span>
                 </label>
               </li>
               <li class="filter-form__filter-element-amount_mb">
-                <label class="filter-form__filter-item">
-                  <input class="filter-form__filter-item visually-hidden" name="tag" type="checkbox" value="colour8">
+                <label for="8" class="filter-form__filter-item">
+                  <input id="8" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour8">
                   <span
                     class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_8 filter-form__filter-indicator_pr">
                   </span>
                 </label>
-              </li>
+              </li> -->
             </ul>
           </fieldset>
           <fieldset class="filter-form__filter-block">
@@ -165,14 +165,14 @@
             <ul class="filter-form__filter-list hidden-marker">
               <li class="filter-form__filter-element-amount_mb">
                 <label class="filter-form__filter-item">
-                  <input class="form-radio filter-form__filter-item visually-hidden" name="show" type="radio" value="show-5">
+                  <input class="form-radio filter-form__filter-item visually-hidden" name="howShow" type="radio" value="show-5">
                   <span class="filter-form__filter-indicator"></span>
                   <span class="filter-form__filter-item-text"> show 5 </span>
                 </label>
               </li>
               <li class="filter-form__filter-element-amount_mb">
                 <label class="filter-form__filter-item">
-                  <input class="form-radio filter-form__filter-item visually-hidden" name="show" type="radio" value="show-10">
+                  <input class="form-radio filter-form__filter-item visually-hidden" name="howShow" type="radio" value="show-10">
                   <span class="filter-form__filter-indicator"></span>
                   <span class="filter-form__filter-item-text"> show 10 </span>
                 </label>
@@ -219,6 +219,7 @@
     <div class="container">
       <h1> результат поиска </h1>
       <pre class="results_js"> </pre>
+      <div class="cards-box_js"> </div>
     </div>
 
     <div class="selector container">

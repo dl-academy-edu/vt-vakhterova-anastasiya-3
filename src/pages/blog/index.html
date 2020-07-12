@@ -42,7 +42,7 @@
           <fieldset class="filter-form__filter-block filter-form__filter-element-amount_mb">
             <legend class="filter-form__filter-name"> Tags </legend>
             <ul class="filter-form__filter-list filter-form__filter-tags hidden-marker tags-box_js">
-              <!-- <li class="filter-form__filter-element-amount_mb">
+              <li class="filter-form__filter-element-amount_mb">
                 <label for="1" class="filter-form__filter-item">
                   <input id="1" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour1">
                   <span
@@ -105,7 +105,7 @@
                     class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_8 filter-form__filter-indicator_pr">
                   </span>
                 </label>
-              </li> -->
+              </li>
             </ul>
           </fieldset>
           <fieldset class="filter-form__filter-block">
@@ -219,9 +219,11 @@
     <div class="container">
       <h1> результат поиска </h1>
       <pre class="results_js"> </pre>
-      <div class="cards-box_js"> </div>
+      <div class="blog">
+        <ul class="blog-list cards-box_js ">
+        </ul> 
+      </div>
     </div>
-
     <div class="selector container">
       <button class="selector__button selector__button_back" type="button"> &#60;
       </button>
@@ -238,9 +240,8 @@
       <button class="selector__button selector__button_next" type="button">	&#62;
       </button> 
     </div> 
-
   </main>
-
+  @@include('footer/index.html')
 
   <script src="index.js"></script>
 </body>

@@ -10,16 +10,12 @@
   top: 5px;
 }
 
-
-
-
 .filter-form {
-
   display: flex;
   flex-direction: column;
   border: none;
 
-  &__filter-block{
+  &__filter-block {
     margin-top: 20px;
     border: none;
   }
@@ -67,7 +63,7 @@
     content: "";
     width: 25px;
     height: 25px;
-    border: 2.5px solid #2176FF;
+    border: 2.5px solid #2176ff;
     box-sizing: border-box;
     border-radius: 5px;
     display: block;
@@ -80,7 +76,7 @@
     content: "";
     width: 25px;
     height: 25px;
-    border: 2.5px solid #33A1FD;
+    border: 2.5px solid #33a1fd;
     box-sizing: border-box;
     border-radius: 5px;
     display: block;
@@ -93,7 +89,7 @@
     content: "";
     width: 25px;
     height: 25px;
-    border: 2.5px solid #FDCA40;
+    border: 2.5px solid #fdca40;
     box-sizing: border-box;
     border-radius: 5px;
     display: block;
@@ -106,7 +102,7 @@
     content: "";
     width: 25px;
     height: 25px;
-    border: 2.5px solid #57E2E5;
+    border: 2.5px solid #57e2e5;
     box-sizing: border-box;
     border-radius: 5px;
     display: block;
@@ -119,7 +115,7 @@
     content: "";
     width: 25px;
     height: 25px;
-    border: 2.5px solid #F79824;
+    border: 2.5px solid #f79824;
     box-sizing: border-box;
     border-radius: 5px;
     display: block;
@@ -132,7 +128,7 @@
     content: "";
     width: 25px;
     height: 25px;
-    border: 2.5px solid #E08DAC;
+    border: 2.5px solid #e08dac;
     box-sizing: border-box;
     border-radius: 5px;
     display: block;
@@ -145,7 +141,7 @@
     content: "";
     width: 25px;
     height: 25px;
-    border: 2.5px solid #6A7FDB;
+    border: 2.5px solid #6a7fdb;
     box-sizing: border-box;
     border-radius: 5px;
     display: block;
@@ -158,7 +154,7 @@
     content: "";
     width: 25px;
     height: 25px;
-    border: 2.5px solid #45CB85;
+    border: 2.5px solid #45cb85;
     box-sizing: border-box;
     border-radius: 5px;
     display: block;
@@ -166,7 +162,6 @@
     top: 0px;
     position: absolute;
   }
-
 
   &__filter-tags {
     display: flex;
@@ -194,9 +189,6 @@
       color: #070707;
       margin-top: 5px;
     }
-
-
-
   }
 
   &__filter-indicator {
@@ -211,17 +203,14 @@
       border: 2.5px solid #070707;
       border-radius: 100%;
     }
-
   }
 
   &__input {
     width: 873px;
     height: 50px;
-    border: 2.5px solid #E5E5E5;
-
-
+    border: 2.5px solid #e5e5e5;
   }
-  
+
   &__wrapper-1 {
     display: flex;
     justify-content: space-between;
@@ -231,10 +220,7 @@
     display: flex;
     justify-content: space-between;
   }
-
 }
-
-
 
 .filter-form__filter-item:checked ~ .filter-form__filter-indicator::after {
   content: "";
@@ -245,11 +231,10 @@
   height: 13px;
   border-radius: 100%;
   background-color: #070707;
-
 }
 
 .form__button {
-  color: #070707;;
+  color: #070707;
   font-family: "Gilroy";
   font-style: normal;
   font-weight: bold;
@@ -258,7 +243,7 @@
   text-align: center;
   align-self: center;
   margin-top: 10px;
-  border: 2.5px solid #070707;;
+  border: 2.5px solid #070707;
   box-sizing: border-box;
   border-radius: 30px;
   padding: 8px 17px;
@@ -274,14 +259,12 @@
   font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
-  color: #E5E5E5;
+  color: #e5e5e5;
   font-size: 14px;
   line-height: 16px;
   text-align: center;
   margin-bottom: -5px;
 }
-
-
 
 .selector {
   display: flex;
@@ -294,75 +277,123 @@
     align-items: center;
   }
 
-  &__page-item{
+  &__page-item {
     font-family: "Gilroy";
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
-    color:  #E5E5E5;
+    color: #e5e5e5;
     margin-right: 10px;
   }
 
-  &__button_back , &__button_next {
+  &__button_back,
+  &__button_next {
     width: 42px;
     height: 42px;
     outline: 0;
     border: 2.5px solid #070707;
     border-radius: 50px;
     background-color: transparent;
-    transition: .5s;
+    transition: 0.5s;
     color: #070707;
     font-family: Gilroy;
     font-style: normal;
     font-weight: 400;
     font-size: 34px;
     line-height: 38px;
-
   }
 }
 
-.blog__tag {
-  width: 30px;
-  height: 10px;
-  border-radius: 5px;
-  margin-right: 5px;
-
-  &_1 {
-    background-color: #2176FF;;
-  }
-  &_2 {
-    background-color: #33A1FD;
-  }
-  &_3 {
-    background-color: #FDCA40;
-  }
-  &_4 {
-    background-color: #57E2E5;
-  }
-  &_5 {
-    background-color: #F79824;
-  }
-  &_6 {
-    background-color: #E08DAC;
-  }
-  &_7 {
-    background-color:  #6A7FDB;
-  }
-  &_8 {
-    background-color: #45CB85;
+.blog {
+  &__item {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 16px;
+    border-top: 2px solid #e5e5e5;
   }
 
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-color: gainsboro;
+  }
+
+  &-wrapper {
+    min-width: 320px;
+    height: 100%;
+    margin-right: 20px;
+  }
+
+  &__content {
+    align-self: center;
+    max-width: 650px;
+    margin-left: 20px;
+  }
+
+  &__general-information {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: normal;
+    margin-right: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #828282;
+  }
+
+  &__title {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 29px;
+    color: #070707;
+  }
+
+  &__text {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #070707;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  &__link {
+    font-family: "Gilroy";
+    font-weight: bold;
+    font-style: normal;
+    position: relative;
+    color: #070707;
+    font-size: 18px;
+    line-height: 22px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px dashed #070707;
+    }
+  }
 }
 
-.filter__tag {
-  display: block;
-  width: 116px;
-  @media (max-width: 858px) {
-    order: 5;
-    margin-right: 50px;
-  }
-  @media (max-width: 445px) {
-    margin-right: 41px;
-  }
+.button {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #070707;
+  align-self: center;
+  margin-top: 10px;
+  border: 2.5px solid #070707;
+  box-sizing: border-box;
+  border-radius: 30px;
+  padding: 8px 17px;
 }

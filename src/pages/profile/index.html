@@ -1,42 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
 	<meta charset="UTF-8" />
-
 	<link rel="stylesheet" href="/common.css">
-  <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Profile</title>
 </head>
-
 <body>
-
-	<header class="header">
-		<div class="container ">
-			<div class="header__content">
-				<a class="header__home-link" href="/index.html">Home</a>
-				<nav class="header__nav-wrapper">
-					<ul class="hidden-marker header__nav-items ">
-						<li>
-							<a class="header__nav-item" href="/pages/blog/index.html"> My blog </a>
-						</li>
-						<li>
-							<a class="header__nav-item" href="/pages/profile/index.html"> My profile </a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-
+@@include('header/index.html')
 	<main>
 		<div class="container">
 			@@include('page-title/index.html',{
-        "text": "My profile"
-      })
+			"text": "My profile"
+			})
 			<div class="profile">
 				<div class="profile__content">
 					<div class="profile__img-box">
@@ -69,39 +48,44 @@
 								<span class="profile__text profile__age"></span>
 							</li>
 						</ul>
-						<button type="submit" class="profile__button profile__button-password profile__button-data-js"> Change password </button>
-						<button type="submit" class="profile__button profile__button-data profile__button-data-js">Change other data </button>
-						<button type="submit" class="profile__button profile__button-delete profile__button-delete-js"> Delete account</button>
+						<button type="submit" class="profile__button profile__button-password_js"> Change
+							password </button>
+						<button type="submit" class="profile__button profile__button-data_js">Change other data
+						</button>
+						<button type="submit" class="profile__button "> Delete
+							account</button>
 					</div>
 				</div>
 			</div>
+		</div>
 	</main>
-	<div class="modal modal_sign-none modal_sign-js">
+	<div class="modal modal__edit-password_none modal__edit-password_js">
 		<form name="password-edit" class="form form__password_width" method="POST">
-				<div class="form__column form__row">
-					<label class="form__label" for="old-password-edit"> Old password
-						<span class="form__label-star_red">*</span>
-					</label>
-					<input class="form__input form__input_password-js password_js" name="oldPassword" id="old-password-edit" type="password" required>
-				</div>
-				<div class="form__column form__row">
-					<label class="form__label" for="new-password-edit"> New password
-						<span class="form__label-star_red">*</span>
-					</label>
-					<input class="form__input" name="newPassword" id="new-password-edit" type="password" required>
-				</div>
-				<div class="form__column form__row">
-					<label class="form__label" for="repeat-password-edit"> Repeat new password
-						<span class="form__label-star_red">*</span>
-					</label>
-					<input class="form__input" name="repNewPassword" id="repeat-password-edit" type="Password" required>
-				</div>
+			<div class="form__column form__row">
+				<label class="form__label" for="old-password-edit"> Old password
+					<span class="form__label-star_red">*</span>
+				</label>
+				<input class="form__input form__input_password-js password_js" name="oldPassword" id="old-password-edit"
+					type="password" required>
+			</div>
+			<div class="form__column form__row">
+				<label class="form__label" for="new-password-edit"> New password
+					<span class="form__label-star_red">*</span>
+				</label>
+				<input class="form__input" name="newPassword" id="new-password-edit" type="password" required>
+			</div>
+			<div class="form__column form__row">
+				<label class="form__label" for="repeat-password-edit"> Repeat new password
+					<span class="form__label-star_red">*</span>
+				</label>
+				<input class="form__input" name="repNewPassword" id="repeat-password-edit" type="Password" required>
+			</div>
 			<button type="submit" class="form__button form__button_black"> Change password </button>
 			<button class="form__x form__x_sign-js" type="button">
 				<img src="/static/images/close.svg" alt="X"> </button>
 		</form>
 	</div>
-	<div class="modal  modal_data-none modal_data-js">
+	<div class="modal modal__edit-data_none modal__edit-data_js">
 		<form name="editing-data" class="form" method="POST">
 			<div class="form__row-column_600">
 				<label class="form__label" for="email-editing-data"> Email</label>
@@ -120,18 +104,18 @@
 			</div>
 			<div class="form__row">
 				<div class="form__column">
-					<label class="form__label" for="location-editing-data"> Location		</label>
+					<label class="form__label" for="location-editing-data"> Location </label>
 					<input class="form__input" name="location" id="location-editing-data" type="text" required>
 				</div>
 				<div class="form__column">
-					<label class="form__label" for="age-editing-data"> Age		</label>
+					<label class="form__label" for="age-editing-data"> Age </label>
 					<input class="form__input" name="age" id="age-editing-data" type="number" required>
 				</div>
 			</div>
 			<div class="form__row">
 				<div class="form__column">
 					<label class="form__label" for="picture-editing-data"> Profile picture </label>
-					<input class="form__input avatar_js" name="avatar" id="picture-editing-data" type="file" required placeholder="Choose a file...">
+					<input class="form__input avatar_js" name="avatar" id="picture-editing-data" type="file" required	>
 				</div>
 			</div>
 			<button type="submit" class="form__button form__button_black"> Sign up </button>
@@ -140,7 +124,9 @@
 		</form>
 	</div>
 	<div class="loader-container loader-container_js"></div>
-	<script src="./index.js"></script>
+	<script src="index.js"></script>
+
+
 </body>
 
 </html>

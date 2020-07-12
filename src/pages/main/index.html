@@ -24,14 +24,17 @@
     <div class="page-slider container">
       <div class="page-slider__wrapper">
         <div class="page-slider__inner-wrapper">
-          <!-- <picture class="page-slider__slide">
-            <source srcset="/static/images/slider-photo.mobile.png"  media="(min-width:0px) and (max-width:599px)">
-            <source srcset="/static/images/slider-photo.ipad.png"  media="(min-width:600px) and (max-width:1000px)">
-            </picture>   -->
-          <img class="page-slider__slide" src="/static/images/slider-photo.png" alt="personal photo">    
-          <img class="page-slider__slide" src="/static/images/slider-photo1.jpg" alt="nature">
-          <img class="page-slider__slide" src="/static/images/slider-photo2.jpg" alt="nature">
-          <img class="page-slider__slide" src="/static/images/slider-photo3.jpg" alt="nature">
+          <div class="page-slider__slide"> 
+            <picture class="page-slider__slide-background_orange">
+              <source srcset="/static/images/slider-photo.mobile.png, /static/images/slider-photo.mobile2x.jpg 2x"  media="(min-width:0px) and (max-width:550px)">
+              <source srcset="/static/images/slider-photo.ipad.png ,/static/images/slider-photo.ipad2x.jpg 2x "  media="(min-width:551px) and (max-width:900px)">
+              <source srcset="/static/images/slider-photo.png, /static/images/slider-photo2x.jpg 2x">
+              <img class="page-slider__img" src="/static/images/slider-photo.png" alt="personal photo">    
+            </picture>  
+          </div>
+          <img class="page-slider__slide page-slider__slide-background_green" src="/static/images/slider-photo1.jpg" alt="nature">
+          <img class="page-slider__slide page-slider__slide-background_blue" src="/static/images/slider-photo2.jpg" alt="nature">
+          <img class="page-slider__slide page-slider__slide-background_brown" src="/static/images/slider-photo3.jpg" alt="nature">
         </div>
       </div>
       <div class="page-slider__bottom-panel">
@@ -40,40 +43,24 @@
         <div class="page-slider__pagination"> </div>
         <button class="page-slider__button page-slider__button_next" type="button">	&#62;
         </button>       
-      
       </div>
     </div >
-    <section class="aboutMe ">
-      <h2 class="aboutMe__title">About me </h2>
-      <div class="aboutMe__wrapper container">
-        <div class="aboutMe__list">
-          <div class="aboutMe__item-block">
-            <svg width="482" height="139" viewBox="0 0 482 139" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M480 2H2V117H416L436 137L456 117H480V2Z" stroke="#070707" stroke-width="2.5"/>
-              </svg>
-            <p class="aboutMe__item-text">
-              Aliquam tortor molestie turpis est tristique. Congue diam orci amet quis semper ut. 
-              Vitae aenean nibh facilisis urna, ultricies euismod nunc. Commodo fringilla sit hendrerit consequat. Vel ac elit vel sagittis.
-            </p>
+    <section class="information">
+      <div class="information__content container">
+        <h2 class="information__title">About me</h2>
+        <div class="information__message-wrapper">
+          <div class="information__message-block">
+            <p class="information__message-text">Aliquam tortor molestie turpis est tristique. Congue diam orci amet quis semper ut. 
+            Vitae aenean nibh facilisis urna, ultricies euismod nunc. Commodo fringilla sit hendrerit consequat. Vel ac elit vel sagittis.</p>
           </div>
-          <div class="aboutMe__item-block aboutMe__item-block_ml">
-            <svg width="482" height="118" viewBox="0 0 482 118" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M480 1.99963H2V95.9996H26L46 116L66 95.9996H480V1.99963Z" stroke="#070707" stroke-width="2.5"/>
-              </svg>
-            <p class="aboutMe__item-text">
-              Tincidunt id quis pellentesque rutrum pretium. Egestas aliquam dictum ipsum nisl, sed pulvinar.
-              Commodo elit sed a fermentum non justo. Etiam platea consectetur.
-            </p>
+          <div class="information__message-block">
+            <p class="information__message-text">Tincidunt id quis pellentesque rutrum pretium. Egestas aliquam dictum ipsum nisl, sed pulvinar. 
+            Commodo elit sed a fermentum non justo. Etiam platea consectetur.</p>
           </div>
-            <div class="aboutMe__item-block">
-              <svg width="482" height="118" viewBox="0 0 482 118" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M480 2H2V96H416L436 116L456 96H480V2Z" stroke="#070707" stroke-width="2.5"/>
-              </svg>
-              <p class="aboutMe__item-text">
-                Quam ipsum odio tellus etiam aliquam dolor ut hendrerit. Felis risus nec vitae nunc ultricies placerat.
-                Nullam nec felis eu id dolor pellentesque tristique. 
-              </p>
-            </div>
+          <div class="information__message-block">
+            <p class="information__message-text">Quam ipsum odio tellus etiam aliquam dolor ut hendrerit. 
+            Felis risus nec vitae nunc ultricies placerat. Nullam nec felis eu id dolor pellentesque tristique. </p>
+          </div>
         </div>
       </div>
     </section>
@@ -151,7 +138,7 @@
     </div>
     </section>
     @@include('footer/index.html')
-<div class="modal  modal_register-none modal_register-js">
+<div class="modal  modal__register_none modal__register_js">
   <form name="register" class="form" method="POST">
     <div class="form__row-column_600">
       <label class="form__label" for="input-email-register"> Email
@@ -181,31 +168,31 @@
         <input class="form__input password_js" name="password" id="input-password-register" type="password" required>
       </div>
       <div class="form__column">
-        <label class="form__label" for="repeat-password"> Repeat password
+        <label class="form__label" for="repeat-password-register"> Repeat password
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="password" id="repeat-password" type="password" required>
+        <input class="form__input" name="passwordRep" id="repeat-password-register" type="password" required>
       </div>
     </div>
     <div class="form__row">
       <div class="form__column">
-        <label class="form__label" for="input-location"> Location
+        <label class="form__label" for="input-location-register"> Location
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="location" id="input-location" type="text" required>
+        <input class="form__input" name="location" id="input-location-register" type="text" required>
       </div>
       <div class="form__column">
-        <label class="form__label" for="input-age"> Age
+        <label class="form__label" for="input-age-register"> Age
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input" name="age" id="input-age" type="number" required>
+        <input class="form__input" name="age" id="input-age-register" type="number" required>
       </div>
     </div>
     <fieldset class="form__checkbox">
       <label class="form__checkbox form__label-checkbox">
         <input class="form__input visually-hidden" name="accept" type="checkbox" value="yes">
         <span class="form__checkbox-indicator"> </span>
-        <span class="form-register__checkbox-text "> Clicking on the button, you consent to the processing of your
+        <span class="form-register__checkbox-text"> Clicking on the button, you consent to the processing of your
           personal data.
         </span>
       </label>
@@ -215,20 +202,20 @@
       <img src="/static/images/close.svg" alt="X"> </button>
   </form>
 </div>
-<div class="modal modal_message-none modal_message-js">
-  <form name="message" class="form" method="POST">
+<div class="modal modal__massage_none modal__massage_js">
+  <form name="massage" class="form" method="POST">
     <div class="form__row">
       <div class="form__column">
         <label class="form__label" for="input-name-message"> What is your name? 
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input form__input_message-js name_js " name="body" id="input-name-message" type="text" required>
+        <input class="form__input form__input_massage-js " name="name" id="input-name-message" type="text" required>
       </div>
       <div class="form__column">
-        <label class="form__label" for="input-subject"> Message subject
-          <span class="form__label-star_red message_js">*</span>
+        <label class="form__label" for="input-subject-message"> Message subject
+          <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input message-subject_js" name="body" id="input-subject" type="text" required>
+        <input class="form__input" name="message" id="input-subject-message" type="text" required>
       </div>
     </div>
     <div class="form__row">
@@ -236,22 +223,22 @@
         <label class="form__label" for="input-email-message"> Your Email
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input email_js" name="to" id="input-email-message" type="email" required>
+        <input class="form__input email_js" name="email" id="input-email-message" type="text" required>
       </div>
       <div class="form__column">
         <label class="form__label" for="input-phone"> Your mobile phone
           <span class="form__label-star_red">*</span>
         </label>
-        <input class="form__input phone_js" name="body" id="input-phone" type="tel" required>
+        <input class="form__input phone_js" name="phone" id="input-phone" type="tel" required>
       </div>
     </div>
     <div class="form__textarea">
-      <label class="form__label" for="input-message"> What do you want to discuss with me?</label>
-      <textarea class="form__textarea-message" name="body" id="input-message" cols="30" rows="10" style="max-width:600px;"> </textarea>
+      <label class="form__label" for="input-discuss-massage"> What do you want to discuss with me?</label>
+      <textarea class="form__textarea-massage" name="discuss" id="input-discuss-massage" cols="30" rows="10" style="max-width:600px;"> </textarea>
     </div>
     <fieldset class="form__checkbox">
       <label class="form__checkbox form__label-checkbox">
-        <input class="form__input visually-hidden" name="body" type="checkbox" value="yes">
+        <input class="form__input visually-hidden" name="accept" type="checkbox" value="yes">
         <span class="form__checkbox-indicator"> </span>
         <span class="form-register__checkbox-text"> Clicking on the button, you consent to the processing of your
           personal data.
@@ -259,11 +246,11 @@
       </label>
     </fieldset>
     <button type="submit" class="form__button"> Sign up </button>
-    <button class="form__x form__x_message-js" type="button">
+    <button class="form__x form__x_massage-js" type="button">
       <img src="/static/images/close.svg" alt="X"> </button>
   </form>
 </div>
-<div class="modal modal_sign-none modal_sign-js">
+<div class="modal modal__sign_none modal__sign_js">
   <form name="sign" class="form form__sign_width" method="POST">
       <div class="form__column form__row">
         <label class="form__label" for="input-email"> Email 
@@ -286,8 +273,9 @@
       <img class="button-scroll__img" src="/static/images/up.png" alt="up">      
     </button>
   </main>
+  <div class="loader-container_js"> </div>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+  
   <script src="index.js"></script>
 </body>
 </html>

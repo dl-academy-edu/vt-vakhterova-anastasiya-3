@@ -1,0 +1,46 @@
+.header{
+  background-color: white;
+  margin-bottom: 40px;
+  margin-top: 33px;
+
+  &__nav-items {
+    flex-direction: row;
+    display: flex; 
+  }
+
+  &__nav-item {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;    
+    color: #828282;
+    margin-left: 21px;
+    border: initial;
+    background-color: initial;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  &__home-link{
+    font-family: 'Gilroy';   
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;        
+    color: #070707;
+    padding-left: 10px;
+  }
+
+
+  &__content {
+    border-bottom: 1px solid #828282;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+
+}
+

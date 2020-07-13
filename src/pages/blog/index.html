@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <link rel="stylesheet" href="/common.css">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container ">
+      <div class="header__content">
+        <a class="header__home-link" href="/index.html">Home</a>
+        <nav class="header__nav-wrapper">
+          <ul class="hidden-marker header__nav-items ">
+            <li>
+              <a class="header__nav-item" href="/pages/blog/index.html"> My blog </a>
+            </li>
+            <li>
+              <a class="header__nav-item" href="/pages/profile/index.html"> My profile </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      @@include('page-title/index.html',{
+      "text": "My blog"
+      })
+    </div>
+    <div class="filter container">
+      <form class="filter-form" name="filterForm" method="GET">
+        <div class="filter-form__wrapper-1">
+          <fieldset class="filter-form__filter-block filter-form__filter-element-amount_mb">
+            <legend class="filter-form__filter-name"> Tags </legend>
+            <ul class="filter-form__filter-list filter-form__filter-tags hidden-marker tags-box_js">
+              <li class="filter-form__filter-element-amount_mb">
+                <label for="1" class="filter-form__filter-item">
+                  <input id="1" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour1">
+                  <span
+                    class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_1 filter-form__filter-indicator_pr">
+                  </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label for="2" class="filter-form__filter-item">
+                  <input id="2" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour2">
+                  <span
+                    class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_2 filter-form__filter-indicator_pr">
+                  </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label for="3" class="filter-form__filter-item">
+                  <input id="3" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour3">
+                  <span
+                    class="filter-form__filter-item-indicator  filter-form__filter-indicator-colour_3 filter-form__filter-indicator_pr">
+                  </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label for="4" class="filter-form__filter-item">
+                  <input id="4" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour4">
+                  <span
+                    class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_4 filter-form__filter-indicator_pr">
+                  </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label for="5" class="filter-form__filter-item">
+                  <input id="5" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour5">
+                  <span
+                    class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_5 filter-form__filter-indicator_pr">
+                  </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label for="6"  class="filter-form__filter-item">
+                  <input id="6" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour6">
+                  <span
+                    class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_6 filter-form__filter-indicator_pr">
+                  </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label for="7" class="filter-form__filter-item">
+                  <input id="7" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour7">
+                  <span
+                    class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_7 filter-form__filter-indicator_pr">
+                  </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label for="8" class="filter-form__filter-item">
+                  <input id="8" class="filter-form__filter-item visually-hidden" name="tags" type="checkbox" value="colour8">
+                  <span
+                    class="filter-form__filter-item-indicator filter-form__filter-indicator-colour_8 filter-form__filter-indicator_pr">
+                  </span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="filter-form__filter-block">
+            <legend class="filter-form__filter-name"> Views </legend>
+            <ul class="filter-form__filter-list hidden-marker">
+              <li class="filter-form__filter-element-amount_mb">
+                <label class="filter-form__filter-item">
+                  <input class="form-radio filter-form__filter-item visually-hidden" name="views" type="radio" value="100-500">
+                  <span class="filter-form__filter-indicator"></span>
+                  <span class="filter-form__filter-item-text"> 100-500 </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label class="filter-form__filter-item">
+                  <input class="form-radio filter-form__filter-item visually-hidden" name="views" type="radio" value="500-1000">
+                  <span class="filter-form__filter-indicator"></span>
+                  <span class="filter-form__filter-item-text"> 500-1000 </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label class="filter-form__filter-item">
+                  <input class="form-radio filter-form__filter-item visually-hidden" name="views" type="radio" value="1000-2000">
+                  <span class="filter-form__filter-indicator"></span>
+                  <span class="filter-form__filter-item-text"> 1000-2000 </span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="filter-form__filter-block">
+            <legend class="filter-form__filter-name"> Comments </legend>
+            <ul class="filter-form__filter-list hidden-marker">
+              <li class="filter-form__filter-element-amount_mb">
+                <label class="filter-form__filter-item">
+                  <input class="filter-form__filter-item visually-hidden" name="comments" type="checkbox" value="0">
+                  <span class="filter-form__filter-item-indicator"> </span>
+                  <span class="filter-form__filter-item-text"> 0 </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label class="filter-form__filter-item">
+                  <input class="filter-form__filter-item visually-hidden" name="comments" type="checkbox" value="0-1">
+                  <span class="filter-form__filter-item-indicator"> </span>
+                  <span class="filter-form__filter-item-text"> 0-1 </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label class="filter-form__filter-item">
+                  <input class="filter-form__filter-item visually-hidden" name="comments" type="checkbox" value="1-50">
+                  <span class="filter-form__filter-item-indicator"> </span>
+                  <span class="filter-form__filter-item-text"> 1-50 </span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="filter-form__filter-block">
+            <legend class="filter-form__filter-name"> How show? </legend>
+            <ul class="filter-form__filter-list hidden-marker">
+              <li class="filter-form__filter-element-amount_mb">
+                <label class="filter-form__filter-item">
+                  <input class="form-radio filter-form__filter-item visually-hidden" name="howShow" type="radio" value="show-5">
+                  <span class="filter-form__filter-indicator"></span>
+                  <span class="filter-form__filter-item-text"> show 5 </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label class="filter-form__filter-item">
+                  <input class="form-radio filter-form__filter-item visually-hidden" name="howShow" type="radio" value="show-10">
+                  <span class="filter-form__filter-indicator"></span>
+                  <span class="filter-form__filter-item-text"> show 10 </span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="filter-form__filter-block">
+            <legend class="filter-form__filter-name"> Sort by </legend>
+            <ul class="filter-form__filter-list hidden-marker">
+              <li class="filter-form__filter-element-amount_mb">
+                <label class="filter-form__filter-item">
+                  <input class="form-radio filter-form__filter-item visually-hidden" name="sort" type="radio" value="date">
+                  <span class="filter-form__filter-indicator"></span>
+                  <span class="filter-form__filter-item-text"> date </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label class="filter-form__filter-item">
+                  <input class="form-radio filter-form__filter-item visually-hidden" name="sort" type="radio" value="title">
+                  <span class="filter-form__filter-indicator"></span>
+                  <span class="filter-form__filter-item-text"> title </span>
+                </label>
+              </li>
+              <li class="filter-form__filter-element-amount_mb">
+                <label class="filter-form__filter-item">
+                  <input class="form-radio filter-form__filter-item visually-hidden" name="sort" type="radio" value="views">
+                  <span class="filter-form__filter-indicator"></span>
+                  <span class="filter-form__filter-item-text"> views </span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <div class="filter-button">
+            <span class="filter-button__title"> reset form</span>
+            <button class="form__button" type="submit">Reset </button>
+          </div>
+        </div>
+        <div class="filter-form__wrapper-2">
+          <input type="text" class="filter-form__input" name="search">
+          <button class="form__button" type="submit"> Search </button>
+        </div>
+      </form>
+    </div>
+    <div class="container">
+      <h1> результат поиска </h1>
+      <pre class="results_js"> </pre>
+      <div class="blog">
+        <ul class="blog-list cards-box_js ">
+        </ul> 
+      </div>
+    </div>
+    <div class="selector container">
+      <button class="selector__button selector__button_back" type="button"> &#60;
+      </button>
+      <div class="selector__pages container">
+        <a href="?page=1" class="selector__page-item link_js"> 1 </a>
+        <a href="?page=2" class="selector__page-item link_js"> 2 </a>
+        <a href="?page=3" class="selector__page-item link_js"> 3 </a>
+        <a href="?page=4" class="selector__page-item link_js"> 4</a>
+        <a href="?page=5" class="selector__page-item link_js"> 5 </a>
+        <a href="?page=6" class="selector__page-item link_js"> 6</a>
+        <a href="?page=7" class="selector__page-item link_js"> 7 </a>
+        <a href="?page=8" class="selector__page-item link_js"> 8 </a>
+      </div>
+      <button class="selector__button selector__button_next" type="button">	&#62;
+      </button> 
+    </div> 
+  </main>
+  @@include('footer/index.html')
+
+  <script src="index.js"></script>
+</body>
+
+</html>

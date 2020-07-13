@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <link rel="stylesheet" href="/common.css">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <title>Главная</title>
+</head>
+<body>
+  @@include('header/index.html')
+  <main>
+    <div class="general-information container"> 
+      @@include('page-title/index.html',{
+        "text": "Antonina Antoninovna"
+      })
+      <div class="general-information__general"> Future front-end developer 23 years old, Tolyatti </div>
+    </div>
+    <div class="page-slider container">
+      <div class="page-slider__wrapper">
+        <div class="page-slider__inner-wrapper">
+          <div class="page-slider__slide"> 
+            <picture class="page-slider__slide-background_orange">
+              <source srcset="/static/images/slider-photo.mobile.png, /static/images/slider-photo.mobile2x.jpg 2x"  media="(min-width:0px) and (max-width:550px)">
+              <source srcset="/static/images/slider-photo.ipad.png ,/static/images/slider-photo.ipad2x.jpg 2x "  media="(min-width:551px) and (max-width:900px)">
+              <source srcset="/static/images/slider-photo.png, /static/images/slider-photo2x.jpg 2x">
+              <img class="page-slider__img" src="/static/images/slider-photo.png" alt="personal photo">    
+            </picture>  
+          </div>
+          <img class="page-slider__slide page-slider__slide-background_green" src="/static/images/slider-photo1.jpg" alt="nature">
+          <img class="page-slider__slide page-slider__slide-background_blue" src="/static/images/slider-photo2.jpg" alt="nature">
+          <img class="page-slider__slide page-slider__slide-background_brown" src="/static/images/slider-photo3.jpg" alt="nature">
+        </div>
+      </div>
+      <div class="page-slider__bottom-panel">
+        <button class="page-slider__button page-slider__button_back" type="button"> &#60;
+        </button>
+        <div class="page-slider__pagination"> </div>
+        <button class="page-slider__button page-slider__button_next" type="button">	&#62;
+        </button>       
+      </div>
+    </div >
+    <section class="information">
+      <div class="information__content container">
+        <h2 class="information__title">About me</h2>
+        <div class="information__message-wrapper">
+          <div class="information__message-block">
+            <p class="information__message-text">Aliquam tortor molestie turpis est tristique. Congue diam orci amet quis semper ut. 
+            Vitae aenean nibh facilisis urna, ultricies euismod nunc. Commodo fringilla sit hendrerit consequat. Vel ac elit vel sagittis.</p>
+          </div>
+          <div class="information__message-block">
+            <p class="information__message-text">Tincidunt id quis pellentesque rutrum pretium. Egestas aliquam dictum ipsum nisl, sed pulvinar. 
+            Commodo elit sed a fermentum non justo. Etiam platea consectetur.</p>
+          </div>
+          <div class="information__message-block">
+            <p class="information__message-text">Quam ipsum odio tellus etiam aliquam dolor ut hendrerit. 
+            Felis risus nec vitae nunc ultricies placerat. Nullam nec felis eu id dolor pellentesque tristique. </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="skills container">
+      <div class="skills__wrapper">
+        <h2 class="skills__title"> Skills </h2>
+        <div class="skills__text"> I work in such programs as </div>
+        <ul class="hidden-marker skills__list">
+          <li class="skills__item">
+            <img class="skills__img" src="/static/images/html.svg" alt="HTML">
+            <div class="skills__item-name">HTML 5 </div>
+            <div class="skills__measurer">
+              <div class="skills__item-percent"> 85% </div>
+              <img class="skills__img-line" src="/static/images/skills.line1.png" alt="">
+            </div>
+          </li>
+          <li class="skills__item">
+            <img class="skills__img" src="/static/images/css.svg" alt="CSS/SCSS">
+            <div class="skills__item-name">CSS/SCSS </div>
+            <div class="skills__measurer">
+              <div class="skills__item-percent"> 55% </div>
+              <img class="skills__img-line" src="/static/images/skills.line2.png" alt="">
+            </div>
+          </li>
+          <li class="skills__item">
+            <img class="skills__img" src="/static/images/java.svg" alt="JavaScript">
+            <div class="skills__item-name">JavaScript</div>
+            <div class="skills__measurer">
+              <div class="skills__item-percent"> 5% </div>
+              <img class="skills__img-line" src="/static/images/skills.line3.png" alt="">
+            </div>
+          </li>
+          <li class="skills__item">
+            <img class="skills__img" src="/static/images/git.png" alt="Git / GitHub">
+            <div class="skills__item-name">Git/GitHub </div>
+            <div class="skills__measurer">
+              <div class="skills__item-percent"> 15%% </div>
+              <img class="skills__img-line" src="/static/images/skills.line4.png" alt="">
+            </div>
+          </li>
+          <li class="skills__item">
+            <img class="skills__img" src="/static/images/figma.svg" alt="Git / Figma">
+            <div class="skills__item-name">Figma </div>
+            <div class="skills__measurer">
+              <div class="skills__item-percent"> 80% </div>
+              <img class="skills__img-line" src="/static/images/skills.line5.png" alt="">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="portfolio">
+      <h2 class="portfolio__title"> Portfolio </h2>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="/static/images/portfolio.site.mobile.png"  media="(min-width:0px) and (max-width:599px)">
+                <source srcset="/static/images/portfolio.site.ipad.png"  media="(min-width:600px) and (max-width:1000px)">                   
+                <img class="portfolio__portfolio-img" src="/static/images/portfolio.site.png" alt="site img">
+              </picture>
+              <div class="portfolio__portfolio-general-block container">
+                <div class="portfolio__general-portfolio-information">
+                  <a class="portfolio__training-company-link"> Learning site for DL Academy courses </a>
+                  <div class="portfolio__portfolio-description"> A simple multi-page static site. The design layout was in Figma. HTML and CSS were used. 
+                  The site is responsive and cross-browser, but without adding interactivity via JavaScript.</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide__background-1 ">Slide 2</div>
+            <div class="swiper-slide swiper-slide__background-2">Slide 3</div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    </section>
+    @@include('footer/index.html')
+<div class="modal  modal__register_none modal__register_js">
+  <form name="register" class="form" method="POST">
+    <div class="form__row-column_600">
+      <label class="form__label" for="input-email-register"> Email
+        <span class="form__label-star_red">*</span>
+      </label>
+      <input class="form__input form__input_js email_js" name="email" id="input-email-register" type="text" required>
+    </div>
+    <div class="form__row">
+      <div class="form__column">
+        <label class="form__label" for="input-name-register"> Name
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="name" id="input-name-register" type="text" required>
+      </div>
+      <div class="form__column">
+        <label class="form__label" for="input-surname-register"> Surname
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="surname" id="input-surname-register" type="text" required>
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__column">
+        <label class="form__label" for="input-password-register"> Password
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input password_js" name="password" id="input-password-register" type="password" required>
+      </div>
+      <div class="form__column">
+        <label class="form__label" for="repeat-password-register"> Repeat password
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="passwordRep" id="repeat-password-register" type="password" required>
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__column">
+        <label class="form__label" for="input-location-register"> Location
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="location" id="input-location-register" type="text" required>
+      </div>
+      <div class="form__column">
+        <label class="form__label" for="input-age-register"> Age
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="age" id="input-age-register" type="number" required>
+      </div>
+    </div>
+    <fieldset class="form__checkbox">
+      <label class="form__checkbox form__label-checkbox">
+        <input class="form__input visually-hidden" name="accept" type="checkbox" value="yes">
+        <span class="form__checkbox-indicator"> </span>
+        <span class="form-register__checkbox-text"> Clicking on the button, you consent to the processing of your
+          personal data.
+        </span>
+      </label>
+    </fieldset>
+    <button type="submit" class="form__button"> Sign up </button>
+    <button class="form__x form__x_js" type="button">
+      <img src="/static/images/close.svg" alt="X"> </button>
+  </form>
+</div>
+<div class="modal modal__massage_none modal__massage_js">
+  <form name="massage" class="form" method="POST">
+    <div class="form__row">
+      <div class="form__column">
+        <label class="form__label" for="input-name-message"> What is your name? 
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input form__input_massage-js " name="name" id="input-name-message" type="text" required>
+      </div>
+      <div class="form__column">
+        <label class="form__label" for="input-subject-message"> Message subject
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="message" id="input-subject-message" type="text" required>
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__column">
+        <label class="form__label" for="input-email-message"> Your Email
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input email_js" name="email" id="input-email-message" type="text" required>
+      </div>
+      <div class="form__column">
+        <label class="form__label" for="input-phone"> Your mobile phone
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input phone_js" name="phone" id="input-phone" type="tel" required>
+      </div>
+    </div>
+    <div class="form__textarea">
+      <label class="form__label" for="input-discuss-massage"> What do you want to discuss with me?</label>
+      <textarea class="form__textarea-massage" name="discuss" id="input-discuss-massage" cols="30" rows="10" style="max-width:600px;"> </textarea>
+    </div>
+    <fieldset class="form__checkbox">
+      <label class="form__checkbox form__label-checkbox">
+        <input class="form__input visually-hidden" name="accept" type="checkbox" value="yes">
+        <span class="form__checkbox-indicator"> </span>
+        <span class="form-register__checkbox-text"> Clicking on the button, you consent to the processing of your
+          personal data.
+        </span>
+      </label>
+    </fieldset>
+    <button type="submit" class="form__button"> Sign up </button>
+    <button class="form__x form__x_massage-js" type="button">
+      <img src="/static/images/close.svg" alt="X"> </button>
+  </form>
+</div>
+<div class="modal modal__sign_none modal__sign_js">
+  <form name="sign" class="form form__sign_width" method="POST">
+      <div class="form__column form__row">
+        <label class="form__label" for="input-email"> Email 
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input form__input_sign-js email_js" name="email" id="input-email" type="text" required>
+      </div>
+      <div class="form__column form__row">
+        <label class="form__label" for="input-password"> Password
+          <span class="form__label-star_red">*</span>
+        </label>
+        <input class="form__input" name="password" id="input-password" type="password" required>
+      </div>
+    <button type="submit" class="form__button"> Log in </button>
+    <button class="form__x form__x_sign-js" type="button">
+      <img src="/static/images/close.svg" alt="X"> </button>
+  </form>
+</div>
+    <button id="check" class="button-scroll button-scroll-up_js button-scroll_none button-scroll_js" type="button"> 
+      <img class="button-scroll__img" src="/static/images/up.png" alt="up">      
+    </button>
+  </main>
+  <div class="loader-container_js"> </div>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+  <script src="index.js"></script>
+</body>
+</html>

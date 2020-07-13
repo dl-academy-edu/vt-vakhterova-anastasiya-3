@@ -1,0 +1,120 @@
+.profile {
+	margin-top: 40px;
+  &__img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: none;
+    min-width: 100.5%;
+    height: 100%;
+    background-color: #f6f6f6;
+    &-box {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 45%;
+      width: 320px;
+      height: 450px;
+      margin-right: 105px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+
+    }
+  }
+  &__content {
+    display: flex;
+    max-width: 750px {
+      justify-content: space-between;
+    }
+    max-width: 718px {
+      flex-wrap: wrap;
+    }
+  }
+  &__list {
+    margin-bottom: 10px;
+    margin-top: 0;
+    max-width: 681px {
+      margin-top: 40px;
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-item {
+      margin-bottom: 20px;
+    }
+
+    &-title {
+      font-family: "Gilroy";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 22px;
+      color: #070707;
+    }
+
+    &-text {
+      font-family: "Gilroy";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 21px;
+      color: #070707;
+    }
+  }
+
+  &__button {
+    align-self: start;
+		margin-bottom: 21px;
+		color: #070707;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 10px;
+    border: 2.5px solid #070707;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 8px 17px;
+		background-color: #ffffff;
+		margin-top: 0px;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+		font-family: "Gilroy";
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 22px;
+		color: #070707;
+  }
+
+  &__text {
+		font-family: "Gilroy";
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 21px;
+		color: #070707;
+    margin-left: 11px;
+  }
+}
+
+
+.form__password_width {
+	width: 370px;
+}
+
+.form__button_black {
+	color: #070707;
+	border: 2.5px solid #070707;
+}
+
+.modal__edit-password_none, .modal__edit-data_none {
+  display: none;
+}
